@@ -1,4 +1,4 @@
-webpackJsonp([2],{
+webpackJsonp(["styles"],{
 
 /***/ "../../../../../src/styles.css":
 /***/ (function(module, exports, __webpack_require__) {
@@ -6,7 +6,7 @@ webpackJsonp([2],{
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../../src/styles.css");
+var content = __webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"sourceMap\":false}!../../../../../src/styles.css");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__("../../../../style-loader/addStyles.js")(content, {});
@@ -15,8 +15,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js??ref--9-1!../node_modules/postcss-loader/index.js??postcss!./styles.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js??ref--9-1!../node_modules/postcss-loader/index.js??postcss!./styles.css");
+		module.hot.accept("!!../node_modules/css-loader/index.js??ref--7-1!../node_modules/postcss-loader/lib/index.js??postcss!./styles.css", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js??ref--7-1!../node_modules/postcss-loader/lib/index.js??postcss!./styles.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ "../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../../src/styles.css":
+/***/ "../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"sourceMap\":false}!../../../../../src/styles.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n/* You can add global styles to this file, and also import other style files */\ninput {\n  margin-bottom: 5px;\n}\n\n.form-custom {\n  width: 50%;\n}\n\n.btn-wrapper {\n  text-align: center;\n}\n\n.btn-custom {\n  width:50%;\n  alignment: center;\n}\n\n.navbar-default {\n  background-color: black;\n}\n\n.navbar-default .navbar-brand {\n  color: white;\n}\n\n.navbar-default .navbar-text {\n  color: white;\n}\n\n.navbar-default .glyphicon {\n  color: white;\n}\n\nbody {\n  padding-top: 70px;\n  padding-bottom: 70px;\n}\n\na:hover {\n  text-decoration: none;\n}\n\n.border-right {\n  border-right: 1px solid black;\n}\n\n.same-line {\n  display: inline-block;\n}\n\n.rk-navbar .glyphicon {\n  color: black;\n}\n\n.rk-navbar {\n  background-color: #e5e5e5;\n}\n\n.rk-navbar .navbar-brand {\n  color: gray;\n}\n\n\n.rk-widget .rk-toolbar {\n  position: absolute;\n  right: 15px;\n  background-color: white;\n  padding: 3px;\n  /* border-radius: 3px; */\n  border-bottom-left-radius: 10px;\n  opacity: 0.8;\n}\n\n.rk-widget .rk-content {\n  width: 100%;\n}\n", ""]);
 
 // exports
 

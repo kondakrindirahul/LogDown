@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+input {
+  margin-bottom: 5px;
+}
+
+.form-custom {
+  width: 50%;
+}
+
+.btn-wrapper {
+  text-align: center;
+}
+
+.btn-custom {
+  width:50%;
+  alignment: center;
+}
+
+.navbar-default {
+  background-color: black;
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+.navbar-default .navbar-text {
+  color: white;
+}
+
+.navbar-default .glyphicon {
+  color: white;
+}
+
+body {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.border-right {
+  border-right: 1px solid black;
+}
+
+.same-line {
+  display: inline-block;
+}
+
+.rk-navbar .glyphicon {
+  color: black;
+}
+
+.rk-navbar {
+  background-color: #e5e5e5;
+}
+
+.rk-navbar .navbar-brand {
+  color: gray;
+}
+
+
+.rk-widget .rk-toolbar {
+  position: absolute;
+  right: 15px;
+  background-color: white;
+  padding: 3px;
+  /* border-radius: 3px; */
+  border-bottom-left-radius: 10px;
+  opacity: 0.8;
+}
+
+.rk-widget .rk-content {
+  width: 100%;
+}

@@ -1,0 +1,60 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <!--heading on the nav bar-->
+    <p class="navbar-header pull-left">
+      <a routerLink=""
+         class="navbar-brand thick">
+        <b>LogDown</b>
+      </a>
+    </p>
+
+    <p class="navbar-header pull-right">
+      <a routerLink="/login"
+         class="navbar-brand thick">
+        <b>Login</b>
+      </a>
+    </p>
+
+    <p class="navbar-header pull-right">
+      <a class="navbar-brand thick">
+        <b>Register</b>
+      </a>
+    </p>
+
+  </div>
+</nav>
+
+<div class="container">
+  <div align="center">
+
+    <h1>Register</h1>
+    <input [(ngModel)]="username"
+           placeholder="username"
+           type="text"
+           class="form-control form-custom"/>
+
+    <input [(ngModel)]="password"
+           placeholder="password"
+           type="password"
+           class="form-control form-custom"/>
+    <input [(ngModel)]="verify_password"
+           placeholder="verify password"
+           type="password"
+           class="form-control form-custom"/>
+
+    <a (click)="register(username, password)"
+       class="btn btn-success btn-block btn-custom">
+      Register
+    </a>
+
+    <a class="btn btn-danger btn-block btn-custom"
+       routerLink="" >Cancel</a>
+  </div>
+
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+
+  </div>
+</nav>
