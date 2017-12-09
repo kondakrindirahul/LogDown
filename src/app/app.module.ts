@@ -12,7 +12,18 @@ import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 
+
 import { UserService } from "./services/user.service.client";
+import { FoodlogService } from "./services/foodlog.service.client";
+import { FooditemService } from "./services/fooditem.service.client";
+import { NutrionixAPIService } from "./services/nutrionixAPI.service.client";
+import { FoodlogListComponent } from "./components/foodlog/foodlog-list/foodlog-list.component";
+import { FoodlogEditComponent } from './components/foodlog/foodlog-edit/foodlog-edit.component';
+import { FoodlogNewComponent } from './components/foodlog/foodlog-new/foodlog-new.component';
+import { FooditemListComponent } from './components/fooditem/fooditem-list/fooditem-list.component';
+import { FooditemNewComponent } from './components/fooditem/fooditem-new/fooditem-new.component';
+import { FooditemEditComponent } from './components/fooditem/fooditem-edit/fooditem-edit.component';
+
 
 @NgModule({
   // Declare components here
@@ -23,6 +34,12 @@ import { UserService } from "./services/user.service.client";
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
+    FoodlogListComponent,
+    FoodlogEditComponent,
+    FoodlogNewComponent,
+    FooditemListComponent,
+    FooditemNewComponent,
+    FooditemEditComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +50,10 @@ import { UserService } from "./services/user.service.client";
   // Client Side services here
   providers: [
     TestService,
-    UserService],
+    UserService,
+    FoodlogService,
+    FooditemService,
+    NutrionixAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

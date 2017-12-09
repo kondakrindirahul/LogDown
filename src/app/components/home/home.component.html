@@ -27,9 +27,45 @@
 </nav>
 
 <div align="center">
+  <div *ngIf="msgFlag"
+       class="alert alert-danger">
+    <b>Login or Register to Log Down your Food</b>
+  </div>
   <h1>LogDown</h1>
   <h3>to a healthier life</h3>
+
+  <h2>Search calories in you food</h2>
+  <input [(ngModel)]="fooditem"
+         placeholder="pizza"
+         class="form-control form-custom"/>
+  <button (click)="searchFood(fooditem)"
+          class="btn btn-primary btn-custom">
+    Search
+  </button>
+
+  <ul class="list-custom list-group">
+    <li class="list-group-item"
+        *ngFor="let food of result">
+      <h4>{{food.fields.item_name}}
+        <a>
+          <span class="glyphicon
+          glyphicon-plus-sign pull-right"
+                (click)="displayMessage()"></span>
+        </a>
+      </h4>
+      Calories: {{food.fields.nf_calories}} <br>
+      Serving Size: {{food.fields.nf_serving_size_qty}}
+
+    </li>
+  </ul>
+
+  <!--<a href="../../../../assets/views/gymsearch.html"-->
+     <!--class="btn btn-success btn-custom">-->
+    <!--Search nearby gyms-->
+  <!--</a>-->
+
 </div>
+
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container-fluid"></div>

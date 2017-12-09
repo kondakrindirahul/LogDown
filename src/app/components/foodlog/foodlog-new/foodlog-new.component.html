@@ -1,0 +1,57 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!--adding the back glyphicon-->
+    <p class="navbar-text pull-left">
+      <a routerLink="/profile/{{userId}}/foodlog"
+         class="navbar-link">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+    </p>
+    <p class="navbar-header pull-left">
+      <a class="navbar-brand thick">
+        <b>New Foodlog</b>
+      </a>
+    </p>
+    <p class="navbar-text pull-right">
+      <a (click)="foodlognew()"
+         class="navbar-link">
+        <span class="glyphicon glyphicon-ok">
+        </span>
+      </a>
+    </p>
+
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div *ngIf="errorFlag"
+       class="alert alert-danger">
+    {{errorMsg}}
+  </div>
+  <div class="form-group">
+    <label>Log Name</label>
+    <input [(ngModel)]='name'
+           type="text"
+           class="form-control"
+           placeholder="entry on wednesday">
+  </div>
+  <div class="form-group">
+    <label>Date</label>
+    <input [(ngModel)]='date'
+           type="date"
+           class="form-control">
+  </div>
+</div>
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a routerLink="/profile/{{userId}}">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>

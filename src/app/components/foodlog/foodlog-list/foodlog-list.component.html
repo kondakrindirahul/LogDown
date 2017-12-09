@@ -1,0 +1,63 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <!--heading on the nav bar-->
+    <p class="navbar-header pull-left">
+      <a class="navbar-brand thick">
+        <b>FoodLogs</b>
+      </a>
+    </p>
+
+    <!--add mark-->
+    <p class="navbar-text pull-right">
+      <a routerLink="/profile/{{userId}}/foodlog/new"
+         class="navbar-link">
+        <span class="glyphicon glyphicon-plus"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <ul class="list-group">
+    <li class="list-group-item active">
+      <div class="row">
+        <div class="col-xs-9 col-sm-6 col-md-3">
+          Foodlog Name
+        </div>
+        <div class="col-md-3 hidden-xs hidden-sm">
+          Date
+        </div>
+      </div>
+    </li>
+
+    <div>
+      <li class="list-group-item" *ngFor="let foodlog of foodlogs">
+
+        <a routerLink="/profile/{{userId}}/foodlog/{{foodlog._id}}/item">
+          {{foodlog.name}}
+        </a>
+
+        <a class="pull-right"
+           routerLink="/profile/{{userId}}/foodlog/{{foodlog._id}}">
+          <span class="glyphicon glyphicon-cog"></span>
+        </a>
+
+      </li>
+    </div>
+
+  </ul>
+</div>
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a routerLink="/profile/{{userId}}">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>

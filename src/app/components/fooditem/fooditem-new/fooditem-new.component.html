@@ -1,0 +1,68 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <!--heading on the nav bar-->
+    <p class="navbar-header pull-left">
+      <a href=""
+         class="navbar-brand thick">
+        <b>Log Down</b>
+      </a>
+    </p>
+
+    <p class="navbar-header pull-right">
+      <a class="navbar-brand thick"
+         routerLink="/login">
+        <b>Login</b>
+      </a>
+    </p>
+
+    <p class="navbar-header pull-right">
+      <a routerLink="/register"
+         class="navbar-brand thick">
+        <b>Register</b>
+      </a>
+    </p>
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div align="center">
+    <h3>Search Nutrionix API for Caloric Content of Food Item</h3>
+    <input [(ngModel)]="fooditem"
+           placeholder="pizza"
+           class="form-control form-custom"/>
+
+    <button (click)="searchFood(fooditem)"
+            class="btn btn-primary btn-block btn-custom">
+      Search
+    </button>
+
+    <ul class="list-group">
+      <li class="list-group-item list-custom"
+          *ngFor="let food of result">
+        <h4>{{food.fields.item_name}}
+          <a (click)="fetchFood(food)">
+          <span class="glyphicon
+          glyphicon-plus-sign pull-right"></span>
+          </a>
+        </h4>
+        Calories : {{food.fields.nf_calories}} <br>
+        Serving Size: {{food.fields.nf_serving_size_qty}}
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a routerLink="">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>

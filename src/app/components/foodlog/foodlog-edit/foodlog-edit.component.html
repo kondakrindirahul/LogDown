@@ -1,0 +1,58 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!--adding the back glyphicon-->
+    <p class="navbar-text pull-left">
+      <a routerLink="/profile/{{userId}}/foodlog"
+         class="navbar-link">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+    </p>
+    <p class="navbar-header pull-left">
+      <a class="navbar-brand thick">
+        <b>Edit</b>
+      </a>
+    </p>
+    <p class="navbar-text pull-right">
+      <a (click)="updateFoodlog(logId)"
+         class="navbar-link">
+        <span class="glyphicon glyphicon-ok">
+        </span>
+      </a>
+    </p>
+
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+
+  <label>Log Name</label>
+  <input [(ngModel)]="foodlog.name"
+         class="form-control"
+         value="{{foodlog.name}}"/>
+
+  <label>Date</label>
+  <input [(ngModel)]="foodlog.dateCreated"
+         class="form-control"
+         type="date"
+         value="{{foodlog.dateCreated}}"/>
+
+  <a class="btn btn-danger btn-block"
+     (click)="deleteFoodlog(logId)">
+    Delete
+  </a>
+
+</div>
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a routerLink="/profile/{{userId}}">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
+

@@ -1,0 +1,81 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <!--heading on the nav bar-->
+    <p class="navbar-header pull-left">
+      <a href=""
+         class="navbar-brand thick">
+        <b>Log Down</b>
+      </a>
+    </p>
+
+    <p class="navbar-header pull-right">
+      <a class="navbar-brand thick"
+         routerLink="/login">
+        <b>Login</b>
+      </a>
+    </p>
+
+    <p class="navbar-header pull-right">
+      <a routerLink="/register"
+         class="navbar-brand thick">
+        <b>Register</b>
+      </a>
+    </p>
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div>
+    <h2>{{userId}}</h2>
+
+    <h3>Food Consumed
+      <a routerLink="/profile/{{userId}}/foodlog/{{logId}}/item/breakfast">
+              <span class="glyphicon
+              glyphicon-plus-sign
+              pull-right"></span>
+      </a>
+    </h3>
+
+    <ul class="list-group">
+
+      <li class="list-group-item lis-custom"
+          *ngFor="let food of fooditems">
+        <b>{{food.name}}</b>
+        <p class="pull-right">Calories : {{food.calories}}</p><br>
+        <p>Serving Size: {{food.servingsize}} </p>
+      </li>
+    </ul>
+
+    <!--<h3>Lunch-->
+    <!--<a routerLink="/profile/{{userId}}/foodlog/{{logId}}/item/lunch">-->
+    <!--<span class="glyphicon-->
+    <!--glyphicon-plus-sign-->
+    <!--pull-right"></span>-->
+    <!--</a>-->
+    <!--</h3>-->
+
+    <!--<ul class="list-group">-->
+
+    <!--<li class="list-group-item lis-custom"-->
+    <!--*ngFor="let food of fooditems">-->
+    <!--<b>{{food.name}}</b>-->
+    <!--<p class="pull-right">Calories : {{food.calories}}</p><br>-->
+    <!--<p>Serving Size: {{food.servingSize}}</p>-->
+    <!--</li>-->
+    <!--</ul>-->
+  </div>
+</div>
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a routerLink="">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>

@@ -1,4 +1,4 @@
-// for local
+// for remote
 var connectionString = 'mongodb://127.0.0.1:27017/test';
 
 // check if running remotely
