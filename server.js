@@ -39,9 +39,9 @@ const server = http.createServer(app);
 var serverSide = require("./server/test-mongodb/app");
 serverSide(app);
 
-// use this server while running on 3100
-var localserver = require('./server/app');
-localserver(app);
+// // use this server while running on 3100
+// var localserver = require('./server/app');
+// localserver(app);
 
 // For Build: Catch all other routes and return the index file -- BUILDING
 app.get('*', function (req, res) {
