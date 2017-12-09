@@ -12,12 +12,18 @@ export class ProfileComponent implements OnInit {
 
   userId: String;
   user: User;
+  users: User[];
 
   constructor(private activatedRoute: ActivatedRoute,
               private userService: UserService) { }
 
   update() {
-    this.userService.updateUser(this.user);
+    const updatedUser = this.user;
+    this.userService
+      .updateUser(this.userId, updatedUser)
+      .subscribe((users) => {
+        this.users = users;
+      });
   }
 
   ngOnInit() {

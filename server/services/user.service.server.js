@@ -1,51 +1,61 @@
 module.exports = function (app) {
 
+  var userModel = require('../models/user/user.model.server');
+
+  app.post('/api/user', createUser);
+  app.get('/api/user', findUsers);
   app.get('/api/user/:userId', findUserById);
-  app.get('/api/user', findAllUsers);
+  app.put('/api/user/:userId', updateUser);
 
-  var USERS = [
-    {_id: "123",
-      username: "alice",
-      password: "alice",
-      mail: "alice@gmail.com",
-      firstName: "Alicia",
-      lastName: "Wonderlandia"}];
+  var users = [
+    {_id: '123', username: 'alice', password: 'alice', mail: 'alice@gmail.com', firstName: 'Alicia', lastName: 'Wonderlandia'}
+  ];
 
-  function findAllUsers(req, res) {
-    const username = req.query['username'];
-    const password = req.query['password'];
-
-    if(username && password) {
-      const user = USERS.find(function (user) {
-        return user.username === username && user.password === password;
-      });
-      if (user) {
+  function createUser(req, res) {
+    var newUser = req.body;
+    userModel.createUser(newUser)
+      .then(function (user) {
         res.json(user);
-      } else {
-        res.json({});
-      }
+      });
+  }
+
+  function findUsers(req, res) {
+    var username = req.query['username'];
+    var password = req.query['password'];
+
+    if (username && password) {
+      var promise = userModel.findUserByCredentials(username, password);
+      promise.then(function (user) {
+        res.json(user);
+      });
       return;
     } else if (username) {
-      const user = USERS.find(function (user) {
-        return user.username === username;
-      });
-      if (user) {
-        res.json(user);
-      } else {
-        res.json({});
-      }
+      userModel.findUserByUsername(username)
+        .then(function (user) {
+          res.json(user);
+        });
       return;
     }
-    // admin asking for all users
-    res.json(USERS);
+
+    res.json(users);
   }
 
   function findUserById(req, res) {
-    const userId = req.params['userId'];
-    const user = USERS.find(function (user) {
-      return user._id === userId;
-    });
-    res.json(user);
+    var userId = req.params['userId'];
+    userModel
+      .findUserById(userId)
+      .then(function (user) {
+        res.json(user);
+      });
+  }
+
+  function updateUser(req, res) {
+    var userId = req.params['userId'];
+    var newUser = req.body;
+    userModel.updateUser(userId, newUser)
+      .then(function (users) {
+        res.json(users);
+      });
   }
 
 };

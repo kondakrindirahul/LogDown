@@ -14,13 +14,31 @@ export class UserService {
   users: User[];
 
   api = {
+    'createUser' : this.createUser,
     'findUserByCredentials' : this.findUserByCredentials,
     'findUserById' : this.findUserById,
+    'findUserByUsername' : this.findUserByUsername,
     'updateUser' : this.updateUser
   };
 
+  createUser(user) {
+    const url = this.domain_url + '/api/user';
+    return this.http.post(url, user)
+      .map((response: Response) => {
+        return response.json();
+      });
+  }
+
   findUserById(userId) {
     var url = this.domain_url + '/api/user/' + userId;
+    return this.http.get(url)
+      .map((response: Response) => {
+        return response.json();
+      });
+  }
+
+  findUserByUsername(username) {
+    const url = this.domain_url + '/api/user/?username=' + username;
     return this.http.get(url)
       .map((response: Response) => {
         return response.json();
@@ -35,13 +53,11 @@ export class UserService {
       });
   }
 
-  updateUser(user) {
-    for(let i = 0; i < this.users.length; i++) {
-      const  _user = this.users[i];
-      if(_user._id === user._id) {
-        this.users[i].firstName = user.firstName;
-        this.users[i].lastName = user.lastName;
-      }
-    }
+  updateUser(userId, updateduser) {
+    const url = this.domain_url + '/api/user/' + userId;
+    return this.http.put(url, updateduser)
+      .map((response: Response) => {
+        return response.json();
+      });
   }
 }

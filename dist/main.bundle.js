@@ -453,7 +453,13 @@ var ProfileComponent = (function () {
         this.userService = userService;
     }
     ProfileComponent.prototype.update = function () {
-        this.userService.updateUser(this.user);
+        var _this = this;
+        var updatedUser = this.user;
+        this.userService
+            .updateUser(this.userId, updatedUser)
+            .subscribe(function (users) {
+            _this.users = users;
+        });
     };
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -513,6 +519,8 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -523,9 +531,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var RegisterComponent = (function () {
-    function RegisterComponent() {
+    function RegisterComponent(userService, router) {
+        this.userService = userService;
+        this.router = router;
     }
+    RegisterComponent.prototype.register = function (username, password) {
+        var _this = this;
+        this.username = username;
+        this.password = password;
+        this.userService.findUserByUsername(username)
+            .subscribe(function (user) {
+            if (user === null) {
+                var new_user = {
+                    username: _this.username,
+                    password: _this.password
+                };
+                _this.userService.createUser(new_user)
+                    .subscribe(function (userFromServer) {
+                    _this.router.navigate(['/profile', userFromServer._id]);
+                });
+            }
+        });
+    };
     RegisterComponent.prototype.ngOnInit = function () {
     };
     return RegisterComponent;
@@ -536,9 +566,10 @@ RegisterComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/user/register/register.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user/register/register.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], RegisterComponent);
 
+var _a, _b;
 //# sourceMappingURL=register.component.js.map
 
 /***/ }),
@@ -634,13 +665,29 @@ var UserService = (function () {
         this.http = http;
         this.domain_url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl;
         this.api = {
+            'createUser': this.createUser,
             'findUserByCredentials': this.findUserByCredentials,
             'findUserById': this.findUserById,
+            'findUserByUsername': this.findUserByUsername,
             'updateUser': this.updateUser
         };
     }
+    UserService.prototype.createUser = function (user) {
+        var url = this.domain_url + '/api/user';
+        return this.http.post(url, user)
+            .map(function (response) {
+            return response.json();
+        });
+    };
     UserService.prototype.findUserById = function (userId) {
         var url = this.domain_url + '/api/user/' + userId;
+        return this.http.get(url)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    UserService.prototype.findUserByUsername = function (username) {
+        var url = this.domain_url + '/api/user/?username=' + username;
         return this.http.get(url)
             .map(function (response) {
             return response.json();
@@ -653,14 +700,12 @@ var UserService = (function () {
             return response.json();
         });
     };
-    UserService.prototype.updateUser = function (user) {
-        for (var i = 0; i < this.users.length; i++) {
-            var _user = this.users[i];
-            if (_user._id === user._id) {
-                this.users[i].firstName = user.firstName;
-                this.users[i].lastName = user.lastName;
-            }
-        }
+    UserService.prototype.updateUser = function (userId, updateduser) {
+        var url = this.domain_url + '/api/user/' + userId;
+        return this.http.put(url, updateduser)
+            .map(function (response) {
+            return response.json();
+        });
     };
     return UserService;
 }());
