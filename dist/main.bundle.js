@@ -681,7 +681,7 @@ var _a;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
 var environment = {
     production: true,
-    baseUrl: 'https://logdownproject.herokuapp.com/'
+    baseUrl: 'https://logdownproject.herokuapp.com'
 };
 //# sourceMappingURL=environment.js.map
 
