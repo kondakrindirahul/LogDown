@@ -1,12 +1,17 @@
 import { User } from "../models/user.model.client";
 import { Injectable } from "@angular/core";
+import { Http, Response } from "@angular/http";
+import 'rxjs/Rx';
+import { environment } from "../../environments/environment";
 
 @Injectable()
 export class UserService {
 
-  users: User[] = [
-    new User('123', 'alice', 'alice', 'alice@gmail.com', 'Alice', 'Wonderland')
-  ];
+  constructor(private http: Http) {}
+
+  domain_url = environment.baseUrl;
+
+  users: User[];
 
   api = {
     'findUserByCredentials' : this.findUserByCredentials,
@@ -15,15 +20,19 @@ export class UserService {
   };
 
   findUserById(userId) {
-    return this.users.find(function (user) {
-      return user._id === userId
-    });
+    var url = this.domain_url + '/api/user/' + userId;
+    return this.http.get(url)
+      .map((response: Response) => {
+        return response.json();
+      });
   }
 
   findUserByCredentials(username, password) {
-    return this.users.find(function (user) {
-      return user.username === username && user.password === password;
-    });
+    var url = this.domain_url + '/api/user?username=' + username + '&password=' + password;
+    return this.http.get(url)
+      .map((response: Response) => {
+        return response.json();
+      });
   }
 
   updateUser(user) {

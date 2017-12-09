@@ -1,7 +1,3 @@
-/**
- * Created by sesha on 6/2/17.
- */
-
 // Get the dependencies
 
 const express = require('express');
@@ -39,10 +35,13 @@ app.set('port', port);
 // Create HTTP server
 const server = http.createServer(app);
 
+// use this server when running on heroku
 var serverSide = require("./server/test-mongodb/app");
 serverSide(app);
 
-
+// use this server while running on 3100
+var localserver = require('./server/app');
+localserver(app);
 
 // For Build: Catch all other routes and return the index file -- BUILDING
 app.get('*', function (req, res) {

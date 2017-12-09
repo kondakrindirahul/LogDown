@@ -376,10 +376,13 @@ var LoginComponent = (function () {
         this.userService = userService;
     }
     LoginComponent.prototype.login = function (username, password) {
-        var user = this.userService.findUserByCredentials(username, password);
-        if (user) {
-            this.router.navigate(['/profile', user._id]);
-        }
+        var _this = this;
+        this.userService.findUserByCredentials(username, password)
+            .subscribe(function (user) {
+            if (user) {
+                _this.router.navigate(['/profile', user._id]);
+            }
+        });
     };
     LoginComponent.prototype.ngOnInit = function () {
     };
@@ -450,13 +453,17 @@ var ProfileComponent = (function () {
         this.userService = userService;
     }
     ProfileComponent.prototype.update = function () {
+        this.userService.updateUser(this.user);
     };
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.activatedRoute.params
-            .subscribe(function (params) {
+        this.activatedRoute.params.subscribe(function (params) {
             _this.userId = params['userId'];
-            _this.user = _this.userService.findUserById(_this.userId);
+            _this.userService.findUserById(_this.userId)
+                .subscribe(function (user) {
+                _this.userId = user._id;
+                _this.user = user;
+            });
         });
     };
     return ProfileComponent;
@@ -536,27 +543,6 @@ RegisterComponent = __decorate([
 
 /***/ }),
 
-/***/ "../../../../../src/app/models/user.model.client.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
-var User = (function () {
-    function User(_id, username, password, mail, firstName, lastName) {
-        this._id = _id;
-        this.username = username;
-        this.password = password;
-        this.mail = mail;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    return User;
-}());
-
-//# sourceMappingURL=user.model.client.js.map
-
-/***/ }),
-
 /***/ "../../../../../src/app/services/test.service.client.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -626,21 +612,27 @@ var _a;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_user_model_client__ = __webpack_require__("../../../../../src/app/models/user.model.client.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/_esm5/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 
 
 var UserService = (function () {
-    function UserService() {
-        this.users = [
-            new __WEBPACK_IMPORTED_MODULE_0__models_user_model_client__["a" /* User */]('123', 'alice', 'alice', 'alice@gmail.com', 'Alice', 'Wonderland')
-        ];
+    function UserService(http) {
+        this.http = http;
+        this.domain_url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl;
         this.api = {
             'findUserByCredentials': this.findUserByCredentials,
             'findUserById': this.findUserById,
@@ -648,13 +640,17 @@ var UserService = (function () {
         };
     }
     UserService.prototype.findUserById = function (userId) {
-        return this.users.find(function (user) {
-            return user._id === userId;
+        var url = this.domain_url + '/api/user/' + userId;
+        return this.http.get(url)
+            .map(function (response) {
+            return response.json();
         });
     };
     UserService.prototype.findUserByCredentials = function (username, password) {
-        return this.users.find(function (user) {
-            return user.username === username && user.password === password;
+        var url = this.domain_url + '/api/user?username=' + username + '&password=' + password;
+        return this.http.get(url)
+            .map(function (response) {
+            return response.json();
         });
     };
     UserService.prototype.updateUser = function (user) {
@@ -669,9 +665,11 @@ var UserService = (function () {
     return UserService;
 }());
 UserService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Injectable */])()
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
 ], UserService);
 
+var _a;
 //# sourceMappingURL=user.service.client.js.map
 
 /***/ }),
