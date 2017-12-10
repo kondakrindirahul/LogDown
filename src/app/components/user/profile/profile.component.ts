@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { UserService } from "../../../services/user.service.client";
 import { User } from "../../../models/user.model.client";
+import { SharedService } from "../../../services/shares.service.client";
 
 @Component({
   selector: 'app-profile',
@@ -11,30 +12,47 @@ import { User } from "../../../models/user.model.client";
 export class ProfileComponent implements OnInit {
 
   userId: String;
-  user: User;
-  users: User[];
+  user = {};
+  username: String;
+  mail: String;
+  firstName: String;
+  lastName: String;
+  password: String;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private userService: UserService) { }
+              private userService: UserService,
+              private sharedService: SharedService,
+              private router: Router) { }
 
   update() {
-    const updatedUser = this.user;
+
+    this.sharedService.user['firstName'] = this.firstName;
+    this.sharedService.user['lastName'] = this.lastName;
+    this.sharedService.user['username'] = this.username;
+    this.sharedService.user['mail'] = this.mail;
+
     this.userService
-      .updateUser(this.userId, updatedUser)
+      .updateUser(this.sharedService.user['_id'], this.sharedService.user)
       .subscribe((users) => {
-        this.users = users;
       });
   }
 
+  logout() {
+    this.userService.logout()
+      .subscribe((status) => {
+        this.router.navigate(['/login']);
+      });
+  }
+
+
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      this.userId = params['userId'];
-      this.userService.findUserById(this.userId)
-        .subscribe((user: User) => {
-          this.userId = user._id;
-          this.user = user;
-        });
-    });
+    this.user = this.sharedService.user;
+    this.userId = this.user['_id'];
+    this.username = this.user['username'];
+    this.mail = this.user['mail'];
+    this.firstName = this.user['firstName'];
+    this.lastName = this.user['lastName'];
+    this.password = this.user['password'];
   }
 
 }

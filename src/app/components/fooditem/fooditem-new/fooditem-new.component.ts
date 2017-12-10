@@ -20,6 +20,7 @@ export class FooditemNewComponent implements OnInit {
   result: Object;
   event: String;
   errorFlag: Boolean;
+  errorFlag2: Boolean;
 
   // additional information
   add_name: String;
@@ -28,6 +29,10 @@ export class FooditemNewComponent implements OnInit {
   brand_name: String;
   servingunit: String;
   fat: String;
+  sugar: String;
+  fiber: String;
+  protein: String;
+  sodium: String;
 
   constructor(private nutrionixService: NutrionixAPIService,
               private activatedRoute: ActivatedRoute,
@@ -35,10 +40,15 @@ export class FooditemNewComponent implements OnInit {
               private router: Router) { }
 
   searchFood(fooditem: String) {
-    this.nutrionixService.searchFoodByName(fooditem)
-      .subscribe((result) => {
-        this.result = result.hits;
-      });
+    if(fooditem) {
+      this.nutrionixService.searchFoodByName(fooditem)
+        .subscribe((result) => {
+          this.result = result.hits;
+        });
+    } else {
+      this.errorFlag2 = true;
+    }
+
   }
 
   displayContent(food) {
@@ -48,6 +58,10 @@ export class FooditemNewComponent implements OnInit {
     this.brand_name = food.fields.brand_name;
     this.servingunit = food.fields.nf_serving_size_unit;
     this.fat = food.fields.nf_total_fat;
+    this.sugar = food.fields.nf_sugars;
+    this.fiber = food.fields.nf_dietary_fiber;
+    this.protein = food.fields.nf_protein;
+    this.sodium = food.fields.nf_sodium;
     this.errorFlag = true;
   }
 

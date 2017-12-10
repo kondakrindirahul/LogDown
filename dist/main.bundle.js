@@ -87,18 +87,26 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_foodlog_service_client__ = __webpack_require__("../../../../../src/app/services/foodlog.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_fooditem_service_client__ = __webpack_require__("../../../../../src/app/services/fooditem.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_nutrionixAPI_service_client__ = __webpack_require__("../../../../../src/app/services/nutrionixAPI.service.client.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_foodlog_foodlog_list_foodlog_list_component__ = __webpack_require__("../../../../../src/app/components/foodlog/foodlog-list/foodlog-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_foodlog_foodlog_edit_foodlog_edit_component__ = __webpack_require__("../../../../../src/app/components/foodlog/foodlog-edit/foodlog-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_foodlog_foodlog_new_foodlog_new_component__ = __webpack_require__("../../../../../src/app/components/foodlog/foodlog-new/foodlog-new.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_fooditem_fooditem_list_fooditem_list_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-list/fooditem-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_fooditem_fooditem_new_fooditem_new_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-new/fooditem-new.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_fooditem_fooditem_edit_fooditem_edit_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-edit/fooditem-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_shares_service_client__ = __webpack_require__("../../../../../src/app/services/shares.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_foodlog_foodlog_list_foodlog_list_component__ = __webpack_require__("../../../../../src/app/components/foodlog/foodlog-list/foodlog-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_foodlog_foodlog_edit_foodlog_edit_component__ = __webpack_require__("../../../../../src/app/components/foodlog/foodlog-edit/foodlog-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_foodlog_foodlog_new_foodlog_new_component__ = __webpack_require__("../../../../../src/app/components/foodlog/foodlog-new/foodlog-new.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_fooditem_fooditem_list_fooditem_list_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-list/fooditem-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_fooditem_fooditem_new_fooditem_new_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-new/fooditem-new.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_fooditem_fooditem_edit_fooditem_edit_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-edit/fooditem-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_authentication_service_client__ = __webpack_require__("../../../../../src/app/services/authentication.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_user_admin_user_list_admin_user_list_component__ = __webpack_require__("../../../../../src/app/components/user/admin-user-list/admin-user-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_admin_service_client__ = __webpack_require__("../../../../../src/app/services/admin.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -136,12 +144,13 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_9__components_user_login_login_component__["a" /* LoginComponent */],
             __WEBPACK_IMPORTED_MODULE_10__components_user_register_register_component__["a" /* RegisterComponent */],
             __WEBPACK_IMPORTED_MODULE_11__components_user_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_foodlog_foodlog_list_foodlog_list_component__["a" /* FoodlogListComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__components_foodlog_foodlog_edit_foodlog_edit_component__["a" /* FoodlogEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_foodlog_foodlog_new_foodlog_new_component__["a" /* FoodlogNewComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_fooditem_fooditem_list_fooditem_list_component__["a" /* FooditemListComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__components_fooditem_fooditem_new_fooditem_new_component__["a" /* FooditemNewComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__components_fooditem_fooditem_edit_fooditem_edit_component__["a" /* FooditemEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_foodlog_foodlog_list_foodlog_list_component__["a" /* FoodlogListComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_foodlog_foodlog_edit_foodlog_edit_component__["a" /* FoodlogEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_foodlog_foodlog_new_foodlog_new_component__["a" /* FoodlogNewComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_fooditem_fooditem_list_fooditem_list_component__["a" /* FooditemListComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_fooditem_fooditem_new_fooditem_new_component__["a" /* FooditemNewComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_fooditem_fooditem_edit_fooditem_edit_component__["a" /* FooditemEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_user_admin_user_list_admin_user_list_component__["a" /* AdminUserListComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -155,7 +164,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_12__services_user_service_client__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_13__services_foodlog_service_client__["a" /* FoodlogService */],
             __WEBPACK_IMPORTED_MODULE_14__services_fooditem_service_client__["a" /* FooditemService */],
-            __WEBPACK_IMPORTED_MODULE_15__services_nutrionixAPI_service_client__["a" /* NutrionixAPIService */]
+            __WEBPACK_IMPORTED_MODULE_15__services_nutrionixAPI_service_client__["a" /* NutrionixAPIService */],
+            __WEBPACK_IMPORTED_MODULE_16__services_shares_service_client__["a" /* SharedService */],
+            __WEBPACK_IMPORTED_MODULE_23__services_authentication_service_client__["a" /* AuthenticationService */],
+            __WEBPACK_IMPORTED_MODULE_25__services_admin_service_client__["a" /* AdminServiceClient */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
@@ -181,6 +193,12 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_foodlog_foodlog_new_foodlog_new_component__ = __webpack_require__("../../../../../src/app/components/foodlog/foodlog-new/foodlog-new.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_fooditem_fooditem_list_fooditem_list_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-list/fooditem-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_fooditem_fooditem_new_fooditem_new_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-new/fooditem-new.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_user_admin_user_list_admin_user_list_component__ = __webpack_require__("../../../../../src/app/components/user/admin-user-list/admin-user-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__ = __webpack_require__("../../../../../src/app/services/authentication.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_admin_service_client__ = __webpack_require__("../../../../../src/app/services/admin.service.client.ts");
+
+
+
 
 
 
@@ -196,13 +214,14 @@ var APP_ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_1__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'test', component: __WEBPACK_IMPORTED_MODULE_2__components_test_test_component__["a" /* TestComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_3__components_user_login_login_component__["a" /* LoginComponent */] },
+    { path: 'admin/user', component: __WEBPACK_IMPORTED_MODULE_11__components_user_admin_user_list_admin_user_list_component__["a" /* AdminUserListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_admin_service_client__["a" /* AdminServiceClient */]] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_4__components_user_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'profile/:userId', component: __WEBPACK_IMPORTED_MODULE_5__components_user_profile_profile_component__["a" /* ProfileComponent */] },
-    { path: 'profile/:userId/foodlog', component: __WEBPACK_IMPORTED_MODULE_6__components_foodlog_foodlog_list_foodlog_list_component__["a" /* FoodlogListComponent */], pathMatch: 'full' },
-    { path: 'profile/:userId/foodlog/new', component: __WEBPACK_IMPORTED_MODULE_8__components_foodlog_foodlog_new_foodlog_new_component__["a" /* FoodlogNewComponent */], pathMatch: 'full' },
-    { path: 'profile/:userId/foodlog/:logId', component: __WEBPACK_IMPORTED_MODULE_7__components_foodlog_foodlog_edit_foodlog_edit_component__["a" /* FoodlogEditComponent */], pathMatch: 'full' },
-    { path: 'profile/:userId/foodlog/:logId/item', component: __WEBPACK_IMPORTED_MODULE_9__components_fooditem_fooditem_list_fooditem_list_component__["a" /* FooditemListComponent */], pathMatch: 'full' },
-    { path: 'profile/:userId/foodlog/:logId/item/:time', component: __WEBPACK_IMPORTED_MODULE_10__components_fooditem_fooditem_new_fooditem_new_component__["a" /* FooditemNewComponent */], pathMatch: 'full' }
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_5__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]] },
+    { path: 'profile/:userId/foodlog', component: __WEBPACK_IMPORTED_MODULE_6__components_foodlog_foodlog_list_foodlog_list_component__["a" /* FoodlogListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
+    { path: 'profile/:userId/foodlog/new', component: __WEBPACK_IMPORTED_MODULE_8__components_foodlog_foodlog_new_foodlog_new_component__["a" /* FoodlogNewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
+    { path: 'profile/:userId/foodlog/:logId', component: __WEBPACK_IMPORTED_MODULE_7__components_foodlog_foodlog_edit_foodlog_edit_component__["a" /* FoodlogEditComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
+    { path: 'profile/:userId/foodlog/:logId/item', component: __WEBPACK_IMPORTED_MODULE_9__components_fooditem_fooditem_list_fooditem_list_component__["a" /* FooditemListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
+    { path: 'profile/:userId/foodlog/:logId/item/:time', component: __WEBPACK_IMPORTED_MODULE_10__components_fooditem_fooditem_new_fooditem_new_component__["a" /* FooditemNewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' }
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forRoot(APP_ROUTES);
@@ -414,7 +433,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/fooditem/fooditem-new/fooditem-new.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a href=\"\"\n         class=\"navbar-brand thick\">\n        <b>Log Down</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\"\n         routerLink=\"/login\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div align=\"center\">\n    <h3>Search Nutrionix API for Caloric Content of Food Item</h3>\n    <input [(ngModel)]=\"fooditem\"\n           placeholder=\"pizza\"\n           class=\"form-control form-custom\"/>\n\n    <a (click)=\"searchFood(fooditem)\"\n            class=\"btn btn-primary btn-block btn-custom\">\n      Search\n    </a>\n\n    <ul class=\"list-group\">\n      <div *ngIf=\"errorFlag\"\n           class=\"alert\">\n        <b>\n          <h3>Additional Information</h3><br>\n          <b>Brand Name: {{brand_name}}</b><br>\n          <b>Product Name: {{add_name}}</b><br>\n          <b>Calorie Content: {{add_calories}}</b><br>\n          <b>Serving Size Quantity: {{add_servingsize}}</b><br>\n          <b>Serving Size Unit: {{servingunit}}</b><br>\n          <b>Fat Content: {{fat}}</b>\n        </b>\n      </div>\n      <li class=\"list-group-item list-custom\"\n          *ngFor=\"let food of result\">\n        <h4>\n          <a (click)=\"displayContent(food)\">\n            {{food.fields.item_name}}\n          </a>\n\n          <a (click)=\"fetchFood(food)\">\n          <span class=\"glyphicon\n          glyphicon-plus-sign pull-right\"></span>\n          </a>\n        </h4>\n        Calories : {{food.fields.nf_calories}} <br>\n        Serving Size: {{food.fields.nf_serving_size_qty}}\n      </li>\n    </ul>\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a href=\"\"\n         class=\"navbar-brand thick\">\n        <b>Log Down</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\"\n         routerLink=\"/login\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div align=\"center\">\n    <h3>Search Nutrionix API for Caloric Content of Food Item</h3>\n    <input [(ngModel)]=\"fooditem\"\n           placeholder=\"pizza\"\n           class=\"form-control form-custom\"/>\n\n    <a (click)=\"searchFood(fooditem)\"\n            class=\"btn btn-primary btn-block btn-custom\">\n      Search\n    </a>\n\n    <div *ngIf=\"errorFlag2\"\n         class=\"alert alert-danger\">\n      <b>\"Enter a food item to view details\"</b>\n    </div>\n\n    <ul class=\"list-group\">\n      <div *ngIf=\"errorFlag\"\n           class=\"alert\">\n        <b>\n          <h3>Additional Information</h3><br>\n          <b>Brand Name: {{brand_name}}</b><br>\n          <b>Product Name: {{add_name}}</b><br>\n          <b>Sugar Content: {{sugar}}</b><br>\n          <b>Dietary Fibers: {{fiber}}</b><br>\n          <b>Protein Content: {{protein}}</b><br>\n          <b>Sodium Content: {{sodium}}</b><br>\n          <b>Fat Content: {{fat}}</b><br>\n        </b>\n      </div>\n      <li class=\"list-group-item list-custom\"\n          *ngFor=\"let food of result\">\n        <h4>\n          <a (click)=\"displayContent(food)\">\n            {{food.fields.item_name}}\n          </a>\n\n          <a (click)=\"fetchFood(food)\">\n          <span class=\"glyphicon\n          glyphicon-plus-sign pull-right\"></span>\n          </a>\n        </h4>\n        Calories : {{food.fields.nf_calories}} <br>\n        Serving Size: {{food.fields.nf_serving_size_qty}}\n      </li>\n    </ul>\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -449,10 +468,15 @@ var FooditemNewComponent = (function () {
     }
     FooditemNewComponent.prototype.searchFood = function (fooditem) {
         var _this = this;
-        this.nutrionixService.searchFoodByName(fooditem)
-            .subscribe(function (result) {
-            _this.result = result.hits;
-        });
+        if (fooditem) {
+            this.nutrionixService.searchFoodByName(fooditem)
+                .subscribe(function (result) {
+                _this.result = result.hits;
+            });
+        }
+        else {
+            this.errorFlag2 = true;
+        }
     };
     FooditemNewComponent.prototype.displayContent = function (food) {
         this.add_name = food.fields.item_name;
@@ -461,6 +485,10 @@ var FooditemNewComponent = (function () {
         this.brand_name = food.fields.brand_name;
         this.servingunit = food.fields.nf_serving_size_unit;
         this.fat = food.fields.nf_total_fat;
+        this.sugar = food.fields.nf_sugars;
+        this.fiber = food.fields.nf_dietary_fiber;
+        this.protein = food.fields.nf_protein;
+        this.sodium = food.fields.nf_sodium;
         this.errorFlag = true;
     };
     FooditemNewComponent.prototype.fetchFood = function (food) {
@@ -567,7 +595,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/foodlog/foodlog-edit/foodlog-edit.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>Edit</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"updateFoodlog(logId)\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div>\n\n  <label>Log Name</label>\n  <input [(ngModel)]=\"foodlog.name\"\n         class=\"form-control\"\n         value=\"{{foodlog.name}}\"/>\n\n  <label>Date</label>\n  <input [(ngModel)]=\"foodlog.dateCreated\"\n         class=\"form-control\"\n         type=\"date\"\n         value=\"{{foodlog.dateCreated}}\"/>\n\n  <a class=\"btn btn-danger btn-block\"\n     (click)=\"deleteFoodlog()\">\n    Delete\n  </a>\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>Edit</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"updateFoodlog(logId)\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div>\n    <div *ngIf=\"errorFlag\"\n         class=\"alert alert-danger\">\n      <b>\"Enter a Name to Edit the Log!!\"</b>\n    </div>\n  <label>Log Name</label>\n  <input [(ngModel)]=\"foodlog.name\"\n         class=\"form-control\"\n         value=\"{{foodlog.name}}\"/>\n\n  <label>Date</label>\n  <input [(ngModel)]=\"foodlog.dateCreated\"\n         class=\"form-control\"\n         type=\"date\"\n         value=\"{{foodlog.dateCreated}}\"/>\n\n  <a class=\"btn btn-danger btn-block\"\n     (click)=\"deleteFoodlog()\">\n    Delete\n  </a>\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
 
 /***/ }),
 
@@ -604,12 +632,17 @@ var FoodlogEditComponent = (function () {
             .subscribe(function (foodlog) {
             _this.foodlog = foodlog;
         });
-        var updatedFoodlog = this.foodlog;
-        this.foodlogService.updateFoodlog(this.userId, updatedFoodlog)
-            .subscribe(function (foodlogs) {
-            _this.foodlogs = foodlogs;
-            _this.router.navigate(['profile', _this.userId, 'foodlog']);
-        });
+        if (this.foodlog.name) {
+            var updatedFoodlog = this.foodlog;
+            this.foodlogService.updateFoodlog(this.userId, updatedFoodlog)
+                .subscribe(function (foodlogs) {
+                _this.foodlogs = foodlogs;
+                _this.router.navigate(['profile', _this.userId, 'foodlog']);
+            });
+        }
+        else {
+            this.errorFlag = true;
+        }
     };
     FoodlogEditComponent.prototype.deleteFoodlog = function () {
         var _this = this;
@@ -676,7 +709,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/foodlog/foodlog-list/foodlog-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>FoodLogs</b>\n      </a>\n    </p>\n\n    <!--add mark-->\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}/foodlog/new\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item active\">\n      <div class=\"row\">\n        <div class=\"col-xs-9 col-sm-6\">\n          Foodlog Name\n        </div>\n        <div class=\"col-md-3 hidden-xs\">\n          Date\n        </div>\n      </div>\n    </li>\n\n    <div>\n      <li class=\"list-group-item\" *ngFor=\"let foodlog of foodlogs\">\n        <div class=\"row\">\n          <div class=\"col-xs-9 col-sm-6\">\n            <a routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}/item\">\n              {{foodlog.name}}\n            </a>\n          </div>\n          <div class=\"col-md-3 hidden-xs\">\n            <a routerLink=\"\">\n              {{foodlog.dateCreated}}\n            </a>\n          </div>\n          <div class=\"col-xs-3\">\n            <a class=\"pull-right\"\n               routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}\">\n              <span class=\"glyphicon glyphicon-cog\"></span>\n            </a>\n          </div>\n\n\n        </div>\n\n      </li>\n    </div>\n\n  </ul>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>FoodLogs</b>\n      </a>\n    </p>\n\n    <!--add mark-->\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}/foodlog/new\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item active\">\n      <div class=\"row\">\n        <div class=\"col-xs-9 col-sm-6\">\n          Foodlog Name\n        </div>\n        <div class=\"col-md-3 hidden-xs\">\n          Date\n        </div>\n      </div>\n    </li>\n\n    <div>\n      <li class=\"list-group-item\" *ngFor=\"let foodlog of foodlogs\">\n        <div class=\"row\">\n          <div class=\"col-xs-9 col-sm-6\">\n            <a routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}/item\">\n              {{foodlog.name}}\n            </a>\n          </div>\n          <div class=\"col-md-3 hidden-xs\">\n            <a routerLink=\"\">\n              {{foodlog.dateCreated}}\n            </a>\n          </div>\n          <div class=\"col-xs-3\">\n            <a class=\"pull-right\"\n               routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}\">\n              <span class=\"glyphicon glyphicon-cog\"></span>\n            </a>\n          </div>\n\n\n        </div>\n\n      </li>\n    </div>\n\n  </ul>\n\n  <button href=\"admin/user\" [hidden]=\"user.roles !== 'ADMIN'\">\n    Users\n  </button>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -688,6 +721,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__ = __webpack_require__("../../../../../src/app/services/foodlog.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -700,10 +734,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FoodlogListComponent = (function () {
-    function FoodlogListComponent(foodlogService, activatedRoute) {
+    function FoodlogListComponent(foodlogService, activatedRoute, userService) {
         this.foodlogService = foodlogService;
         this.activatedRoute = activatedRoute;
+        this.userService = userService;
     }
     FoodlogListComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -715,6 +751,11 @@ var FoodlogListComponent = (function () {
                 .subscribe(function (foodlogs) {
                 _this.foodlogs = foodlogs;
             });
+            _this.userService
+                .findUserById(_this.userId)
+                .subscribe(function (user) {
+                _this.user = user;
+            });
         });
     };
     return FoodlogListComponent;
@@ -725,10 +766,10 @@ FoodlogListComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/foodlog/foodlog-list/foodlog-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/foodlog/foodlog-list/foodlog-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */]) === "function" && _c || Object])
 ], FoodlogListComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=foodlog-list.component.js.map
 
 /***/ }),
@@ -754,7 +795,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/foodlog/foodlog-new/foodlog-new.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>New Foodlog</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"foodlognew()\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div *ngIf=\"errorFlag\"\n       class=\"alert alert-danger\">\n    {{errorMsg}}\n  </div>\n  <div class=\"form-group\">\n    <label>Log Name</label>\n    <input [(ngModel)]='name'\n           type=\"text\"\n           class=\"form-control\"\n           placeholder=\"entry on wednesday\">\n  </div>\n  <div class=\"form-group\">\n    <label>Date</label>\n    <input [(ngModel)]='date'\n           type=\"date\"\n           class=\"form-control\">\n  </div>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>New Foodlog</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"foodlognew()\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div *ngIf=\"errorFlag\"\n       class=\"alert alert-danger\">\n    <b>Please enter a name for the foodlog!!</b>\n  </div>\n  <div class=\"form-group\">\n    <label>Log Name</label>\n    <input [(ngModel)]='name'\n           type=\"text\"\n           class=\"form-control\"\n           placeholder=\"entry on wednesday\">\n  </div>\n  <div class=\"form-group\">\n    <label>Date</label>\n    <input [(ngModel)]='date'\n           type=\"date\"\n           class=\"form-control\">\n  </div>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -789,11 +830,16 @@ var FoodlogNewComponent = (function () {
     }
     FoodlogNewComponent.prototype.foodlognew = function () {
         var _this = this;
-        var foodlog = new __WEBPACK_IMPORTED_MODULE_2__models_foodlog_model_client__["a" /* FoodLog */]('', this.name, this.userId, this.date);
-        this.foodlogService.createFoodlog(this.userId, foodlog)
-            .subscribe(function (foodlogs) {
-            _this.router.navigate(['profile', _this.userId, 'foodlog']);
-        });
+        if (this.name) {
+            var foodlog = new __WEBPACK_IMPORTED_MODULE_2__models_foodlog_model_client__["a" /* FoodLog */]('', this.name, this.userId, this.date);
+            this.foodlogService.createFoodlog(this.userId, foodlog)
+                .subscribe(function (foodlogs) {
+                _this.router.navigate(['profile', _this.userId, 'foodlog']);
+            });
+        }
+        else {
+            this.errorFlag = true;
+        }
     };
     FoodlogNewComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -992,6 +1038,77 @@ var _a;
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/user/admin-user-list/admin-user-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/user/admin-user-list/admin-user-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h1>User List</h1>\n\n<ul>\n  <li *ngFor=\"let user of users\">\n    {{user.username}}\n  </li>\n</ul>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/user/admin-user-list/admin-user-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminUserListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AdminUserListComponent = (function () {
+    function AdminUserListComponent(userService) {
+        this.userService = userService;
+    }
+    AdminUserListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userService
+            .findAllUsers()
+            .subscribe(function (users) {
+            _this.users = users;
+        });
+    };
+    return AdminUserListComponent;
+}());
+AdminUserListComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-admin-user-list',
+        template: __webpack_require__("../../../../../src/app/components/user/admin-user-list/admin-user-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/user/admin-user-list/admin-user-list.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object])
+], AdminUserListComponent);
+
+var _a;
+//# sourceMappingURL=admin-user-list.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/user/login/login.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1013,7 +1130,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a routerLink=\"\"\n         class=\"navbar-brand thick\">\n        <b>LogDown</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div align=\"center\">\n\n    <h1>Login</h1>\n\n    <input [(ngModel)]=\"username\"\n           placeholder=\"alice\"\n           type=\"text\"\n           id=\"username\"\n           class=\"form-control form-custom\"/>\n\n    <input [(ngModel)]=\"password\"\n           placeholder=\"123!123\"\n           type=\"password\"\n           id=\"password\"\n           class=\"form-control form-custom\"/>\n\n    <a (click)=\"login(username, password)\"\n       class=\"btn btn-primary btn-block btn-custom\">\n      Login\n    </a>\n\n    <a routerLink=\"/register\"\n       class=\"btn btn-success btn-block btn-custom\">\n      Register\n    </a>\n  </div>\n\n</div>\n\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a routerLink=\"\"\n         class=\"navbar-brand thick\">\n        <b>LogDown</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div align=\"center\">\n\n    <div *ngIf=\"errorFlag\"\n         class=\"alert alert-danger\">\n      'Please enter both username and password!!'\n    </div>\n\n    <h1>Login</h1>\n\n    <input [(ngModel)]=\"username\"\n           placeholder=\"alice\"\n           type=\"text\"\n           id=\"username\"\n           class=\"form-control form-custom\"/>\n\n    <input [(ngModel)]=\"password\"\n           placeholder=\"123!123\"\n           type=\"password\"\n           id=\"password\"\n           class=\"form-control form-custom\"/>\n\n    <a (click)=\"login()\"\n       class=\"btn btn-primary btn-block btn-custom\">\n      Login\n    </a>\n\n    <a routerLink=\"/register\"\n       class=\"btn btn-success btn-block btn-custom\">\n      Register\n    </a>\n  </div>\n\n</div>\n\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1025,6 +1142,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shares_service_client__ = __webpack_require__("../../../../../src/app/services/shares.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1037,19 +1155,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var LoginComponent = (function () {
-    function LoginComponent(router, userService) {
+    function LoginComponent(router, userService, sharedService) {
         this.router = router;
         this.userService = userService;
+        this.sharedService = sharedService;
     }
-    LoginComponent.prototype.login = function (username, password) {
+    LoginComponent.prototype.login = function () {
         var _this = this;
-        this.userService.findUserByCredentials(username, password)
-            .subscribe(function (user) {
-            if (user) {
+        if (this.username && this.password) {
+            this.userService
+                .login(this.username, this.password)
+                .subscribe(function (user) {
+                _this.sharedService.user = user;
                 _this.router.navigate(['/profile', user._id, 'foodlog']);
-            }
-        });
+            });
+        }
+        else {
+            this.errorFlag = true;
+        }
     };
     LoginComponent.prototype.ngOnInit = function () {
     };
@@ -1061,10 +1186,10 @@ LoginComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/user/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user/login/login.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_shares_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shares_service_client__["a" /* SharedService */]) === "function" && _c || Object])
 ], LoginComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=login.component.js.map
 
 /***/ }),
@@ -1090,7 +1215,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>Profile</b>\n      </a>\n    </p>\n\n    <!--tick mark-->\n    <p class=\"navbar-text pull-right\">\n      <a class=\"navbar-link\"\n         (click)=\"update()\">\n        <span class=\"glyphicon glyphicon-ok\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n\n<div class=\"container container-fluid\">\n  <form>\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input [(ngModel)]=\"user.username\"\n             type=\"text\"\n             class=\"form-control\"\n             name=\"username\"\n             placeholder=\"alice\"\n             id=\"username\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input [(ngModel)]=\"user.mail\"\n             type=\"email\"\n             class=\"form-control\"\n             id=\"email\"\n             name=\"mail\"\n             placeholder=\"alice.wonderland@unicorn.com\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input [(ngModel)]=\"user.firstName\"\n             type=\"text\"\n             class=\"form-control\"\n             name=\"firstName\"\n             id=\"first-name\"\n             placeholder=\"Alice\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input [(ngModel)]=\"user.lastName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"last-name\"\n             name=\"lastName\"\n             placeholder=\"Wonderland\">\n    </div>\n  </form>\n\n  <a class=\"btn btn-primary btn-block \"\n     (click)=\"update()\">Update</a>\n\n  <a class=\"btn btn-success btn-block\"\n     routerLink=\"/profile/{{user._id}}/foodlog\">\n    FoodLog List\n  </a>\n\n  <a class=\"btn btn-danger btn-block \"\n     routerLink=\"/login\">Logout</a>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a >\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>Profile</b>\n      </a>\n    </p>\n\n    <!--tick mark-->\n    <p class=\"navbar-text pull-right\">\n      <a class=\"navbar-link\"\n         (click)=\"update()\">\n        <span class=\"glyphicon glyphicon-ok\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n\n<div class=\"container container-fluid\">\n  <form>\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input [(ngModel)]=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             name=\"username\"\n             placeholder=\"alice\"\n             id=\"username\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input [(ngModel)]=\"mail\"\n             type=\"email\"\n             class=\"form-control\"\n             id=\"email\"\n             name=\"mail\"\n             placeholder=\"alice.wonderland@unicorn.com\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input [(ngModel)]=\"firstName\"\n             type=\"text\"\n             class=\"form-control\"\n             name=\"firstName\"\n             id=\"first-name\"\n             placeholder=\"Alice\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input [(ngModel)]=\"lastName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"last-name\"\n             name=\"lastName\"\n             placeholder=\"Wonderland\">\n    </div>\n  </form>\n\n  <a class=\"btn btn-primary btn-block \"\n     (click)=\"update()\">Update</a>\n\n  <a class=\"btn btn-success btn-block\"\n     routerLink=\"/profile/{{user._id}}/foodlog\">\n    FoodLog List\n  </a>\n\n  <a class=\"btn btn-danger btn-block \"\n     (click)=\"logout()\">Logout</a>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a >\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1102,6 +1227,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shares_service_client__ = __webpack_require__("../../../../../src/app/services/shares.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1114,30 +1240,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProfileComponent = (function () {
-    function ProfileComponent(activatedRoute, userService) {
+    function ProfileComponent(activatedRoute, userService, sharedService, router) {
         this.activatedRoute = activatedRoute;
         this.userService = userService;
+        this.sharedService = sharedService;
+        this.router = router;
+        this.user = {};
     }
     ProfileComponent.prototype.update = function () {
-        var _this = this;
-        var updatedUser = this.user;
+        this.sharedService.user['firstName'] = this.firstName;
+        this.sharedService.user['lastName'] = this.lastName;
+        this.sharedService.user['username'] = this.username;
+        this.sharedService.user['mail'] = this.mail;
         this.userService
-            .updateUser(this.userId, updatedUser)
+            .updateUser(this.sharedService.user['_id'], this.sharedService.user)
             .subscribe(function (users) {
-            _this.users = users;
+        });
+    };
+    ProfileComponent.prototype.logout = function () {
+        var _this = this;
+        this.userService.logout()
+            .subscribe(function (status) {
+            _this.router.navigate(['/login']);
         });
     };
     ProfileComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.activatedRoute.params.subscribe(function (params) {
-            _this.userId = params['userId'];
-            _this.userService.findUserById(_this.userId)
-                .subscribe(function (user) {
-                _this.userId = user._id;
-                _this.user = user;
-            });
-        });
+        this.user = this.sharedService.user;
+        this.userId = this.user['_id'];
+        this.username = this.user['username'];
+        this.mail = this.user['mail'];
+        this.firstName = this.user['firstName'];
+        this.lastName = this.user['lastName'];
+        this.password = this.user['password'];
     };
     return ProfileComponent;
 }());
@@ -1147,10 +1283,10 @@ ProfileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/user/profile/profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user/profile/profile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_shares_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shares_service_client__["a" /* SharedService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _d || Object])
 ], ProfileComponent);
 
-var _a, _b;
+var _a, _b, _c, _d;
 //# sourceMappingURL=profile.component.js.map
 
 /***/ }),
@@ -1176,7 +1312,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a routerLink=\"\"\n         class=\"navbar-brand thick\">\n        <b>LogDown</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/login\"\n         class=\"navbar-brand thick\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container\">\n  <div align=\"center\">\n\n    <h1>Register</h1>\n    <input [(ngModel)]=\"username\"\n           placeholder=\"username\"\n           type=\"text\"\n           class=\"form-control form-custom\"/>\n\n    <input [(ngModel)]=\"password\"\n           placeholder=\"password\"\n           type=\"password\"\n           class=\"form-control form-custom\"/>\n    <input [(ngModel)]=\"verify_password\"\n           placeholder=\"verify password\"\n           type=\"password\"\n           class=\"form-control form-custom\"/>\n\n    <a (click)=\"register(username, password)\"\n       class=\"btn btn-success btn-block btn-custom\">\n      Register\n    </a>\n\n    <a class=\"btn btn-danger btn-block btn-custom\"\n       routerLink=\"\" >Cancel</a>\n  </div>\n\n</div>\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a routerLink=\"\"\n         class=\"navbar-brand thick\">\n        <b>LogDown</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/login\"\n         class=\"navbar-brand thick\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container\">\n  <div align=\"center\">\n\n    <div *ngIf=\"errorFlag1\"\n         class=\"alert alert-danger\">\n      The passwords do not match!!\n    </div>\n\n    <div *ngIf=\"errorFlag2\"\n         class=\"alert alert-danger\">\n      <b>Please enter username, password and verify the password!!</b>\n    </div>\n\n    <h1>Register</h1>\n    <input [(ngModel)]=\"username\"\n           placeholder=\"username\"\n           type=\"text\"\n           class=\"form-control form-custom\"/>\n\n    <input [(ngModel)]=\"password\"\n           placeholder=\"password\"\n           type=\"password\"\n           class=\"form-control form-custom\"/>\n    <input [(ngModel)]=\"verify_password\"\n           placeholder=\"verify password\"\n           type=\"password\"\n           class=\"form-control form-custom\"/>\n\n    <a (click)=\"register()\"\n       class=\"btn btn-success btn-block btn-custom\">\n      Register\n    </a>\n\n    <a class=\"btn btn-danger btn-block btn-custom\"\n       routerLink=\"\" >Cancel</a>\n  </div>\n\n</div>\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1188,6 +1324,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shares_service_client__ = __webpack_require__("../../../../../src/app/services/shares.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1200,28 +1337,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var RegisterComponent = (function () {
-    function RegisterComponent(userService, router) {
+    function RegisterComponent(userService, router, sharedService) {
         this.userService = userService;
         this.router = router;
+        this.sharedService = sharedService;
     }
-    RegisterComponent.prototype.register = function (username, password) {
+    RegisterComponent.prototype.register = function () {
         var _this = this;
-        this.username = username;
-        this.password = password;
-        this.userService.findUserByUsername(username)
-            .subscribe(function (user) {
-            if (user === null) {
-                var new_user = {
-                    username: _this.username,
-                    password: _this.password
-                };
-                _this.userService.createUser(new_user)
-                    .subscribe(function (userFromServer) {
-                    _this.router.navigate(['/profile', userFromServer._id]);
-                });
+        if (this.username && this.password && this.verify_password) {
+            if (this.password !== this.verify_password) {
+                this.errorFlag1 = true;
+                return;
             }
-        });
+            this.userService.register(this.username, this.password)
+                .subscribe(function (user) {
+                _this.sharedService.user = user;
+                _this.router.navigate(['/profile']);
+            });
+        }
+        else {
+            this.errorFlag2 = true;
+        }
     };
     RegisterComponent.prototype.ngOnInit = function () {
     };
@@ -1233,10 +1371,10 @@ RegisterComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/user/register/register.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user/register/register.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_shares_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shares_service_client__["a" /* SharedService */]) === "function" && _c || Object])
 ], RegisterComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=register.component.js.map
 
 /***/ }),
@@ -1257,6 +1395,80 @@ var FoodLog = (function () {
 }());
 
 //# sourceMappingURL=foodlog.model.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/admin.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminServiceClient; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AdminServiceClient = (function () {
+    function AdminServiceClient(userService) {
+        this.userService = userService;
+    }
+    AdminServiceClient.prototype.canActivate = function () {
+        return this.userService.isAdmin();
+    };
+    return AdminServiceClient;
+}());
+AdminServiceClient = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__user_service_client__["a" /* UserService */]) === "function" && _a || Object])
+], AdminServiceClient);
+
+var _a;
+//# sourceMappingURL=admin.service.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/authentication.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthenticationService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AuthenticationService = (function () {
+    function AuthenticationService(userService) {
+        this.userService = userService;
+    }
+    AuthenticationService.prototype.canActivate = function () {
+        return this.userService.loggedIn();
+    };
+    return AuthenticationService;
+}());
+AuthenticationService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__user_service_client__["a" /* UserService */]) === "function" && _a || Object])
+], AuthenticationService);
+
+var _a;
+//# sourceMappingURL=authentication.service.client.js.map
 
 /***/ }),
 
@@ -1460,7 +1672,7 @@ var NutrionixAPIService = (function () {
     }
     NutrionixAPIService.prototype.searchFoodByName = function (name) {
         var url = 'https://api.nutritionix.com/v1_1/search/' + name +
-            '?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=e6ce2c51&appKey=82b443c9f9191e8bc996127502a53d00';
+            '?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_sugars%2Cnf_dietary_fiber%2Cnf_protein%2Cnf_sodium%2Cnf_total_fat&appId=e6ce2c51&appKey=82b443c9f9191e8bc996127502a53d00';
         return this.http.get(url)
             .map(function (response) {
             return response.json();
@@ -1475,6 +1687,33 @@ NutrionixAPIService = __decorate([
 
 var _a;
 //# sourceMappingURL=nutrionixAPI.service.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/shares.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var SharedService = (function () {
+    function SharedService() {
+        this.user = '';
+    }
+    return SharedService;
+}());
+SharedService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])()
+], SharedService);
+
+//# sourceMappingURL=shares.service.client.js.map
 
 /***/ }),
 
@@ -1551,6 +1790,8 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/_esm5/Rx.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shares_service_client__ = __webpack_require__("../../../../../src/app/services/shares.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1564,11 +1805,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var UserService = (function () {
-    function UserService(http) {
+    function UserService(http, sharedService, router) {
         this.http = http;
+        this.sharedService = sharedService;
+        this.router = router;
+        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]();
         this.domain_url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl;
         this.api = {
+            'login': this.login,
+            'register': this.register,
+            'logout': this.logout,
+            'loggedIn': this.loggedIn,
             'createUser': this.createUser,
             'findUserByCredentials': this.findUserByCredentials,
             'findUserById': this.findUserById,
@@ -1576,6 +1826,80 @@ var UserService = (function () {
             'updateUser': this.updateUser
         };
     }
+    UserService.prototype.register = function (username, password) {
+        var url = this.domain_url + '/api/register';
+        var credentials = {
+            username: username,
+            password: password
+        };
+        this.options.withCredentials = true;
+        return this.http.post(url, credentials, this.options)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    UserService.prototype.login = function (username, password) {
+        var url = this.domain_url + '/api/login';
+        var credentials = {
+            username: username,
+            password: password
+        };
+        this.options.withCredentials = true;
+        return this.http.post(url, credentials, this.options)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    UserService.prototype.isAdmin = function () {
+        var _this = this;
+        var url = this.domain_url + '/api/admin/isAdmin';
+        this.options.withCredentials = true;
+        return this.http.get(url, this.options)
+            .map(function (res) {
+            var user = res.json();
+            if (user !== 0) {
+                _this.sharedService.user = user;
+                return true;
+            }
+            else {
+                _this.router.navigate(['/login']);
+                return false;
+            }
+        });
+    };
+    UserService.prototype.logout = function () {
+        var url = this.domain_url + '/api/logout';
+        this.options.withCredentials = true;
+        return this.http.post(url, '', this.options)
+            .map(function (status) {
+            return status;
+        });
+    };
+    UserService.prototype.loggedIn = function () {
+        var _this = this;
+        var url = this.domain_url + '/api/loggedIn';
+        this.options.withCredentials = true;
+        return this.http.post(url, '', this.options)
+            .map(function (res) {
+            var user = res.json();
+            if (user !== 0) {
+                _this.sharedService.user = user;
+                return true;
+            }
+            else {
+                _this.router.navigate(['/login']);
+                return false;
+            }
+        });
+    };
+    UserService.prototype.findAllUsers = function () {
+        var url = this.domain_url + '/api/admin/user';
+        this.options.withCredentials = true;
+        return this.http.get(url, this.options)
+            .map(function (res) {
+            return res.json();
+        });
+    };
     UserService.prototype.createUser = function (user) {
         var url = this.domain_url + '/api/user';
         return this.http.post(url, user)
@@ -1615,10 +1939,10 @@ var UserService = (function () {
 }());
 UserService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__shares_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shares_service_client__["a" /* SharedService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */]) === "function" && _c || Object])
 ], UserService);
 
-var _a;
+var _a, _b, _c;
 //# sourceMappingURL=user.service.client.js.map
 
 /***/ }),

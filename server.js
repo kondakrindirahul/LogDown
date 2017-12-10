@@ -10,6 +10,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+var cookieParser = require('cookie-parser');
+var session      = require('express-session');
+
+app.use(cookieParser());
+//remote
+app.use(session({ secret: process.env.SESSION_SECRET }));
+// //local
+// app.use(session({ secret: "some secret"}));
+
+var passport = require('passport');
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // Point static path to dist -- For building -- REMOVE
@@ -19,13 +31,15 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // CORS
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Origin",
+    "http://localhost:4200");
+  res.header("Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
-
-
 
 
 const port = process.env.PORT || '3100';
@@ -39,7 +53,7 @@ const server = http.createServer(app);
 // var serverSide = require("./server/test-mongodb/app");
 // serverSide(app);
 
-// use this server while running on 3100
+// use this server while running on 3100 and remote
 var localserver = require('./server/app');
 localserver(app);
 

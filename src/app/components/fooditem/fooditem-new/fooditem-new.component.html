@@ -38,6 +38,11 @@
       Search
     </a>
 
+    <div *ngIf="errorFlag2"
+         class="alert alert-danger">
+      <b>"Enter a food item to view details"</b>
+    </div>
+
     <ul class="list-group">
       <div *ngIf="errorFlag"
            class="alert">
@@ -45,10 +50,11 @@
           <h3>Additional Information</h3><br>
           <b>Brand Name: {{brand_name}}</b><br>
           <b>Product Name: {{add_name}}</b><br>
-          <b>Calorie Content: {{add_calories}}</b><br>
-          <b>Serving Size Quantity: {{add_servingsize}}</b><br>
-          <b>Serving Size Unit: {{servingunit}}</b><br>
-          <b>Fat Content: {{fat}}</b>
+          <b>Sugar Content: {{sugar}}</b><br>
+          <b>Dietary Fibers: {{fiber}}</b><br>
+          <b>Protein Content: {{protein}}</b><br>
+          <b>Sodium Content: {{sodium}}</b><br>
+          <b>Fat Content: {{fat}}</b><br>
         </b>
       </div>
       <li class="list-group-item list-custom"

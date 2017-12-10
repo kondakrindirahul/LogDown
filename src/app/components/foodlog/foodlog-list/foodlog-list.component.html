@@ -59,6 +59,11 @@
     </div>
 
   </ul>
+
+  <button href="admin/user" [hidden]="user.roles !== 'ADMIN'">
+    Users
+  </button>
+
 </div>
 
 <!-- Footer -->

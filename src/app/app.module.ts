@@ -17,12 +17,17 @@ import { UserService } from "./services/user.service.client";
 import { FoodlogService } from "./services/foodlog.service.client";
 import { FooditemService } from "./services/fooditem.service.client";
 import { NutrionixAPIService } from "./services/nutrionixAPI.service.client";
+import { SharedService } from "./services/shares.service.client";
+
 import { FoodlogListComponent } from "./components/foodlog/foodlog-list/foodlog-list.component";
 import { FoodlogEditComponent } from './components/foodlog/foodlog-edit/foodlog-edit.component';
 import { FoodlogNewComponent } from './components/foodlog/foodlog-new/foodlog-new.component';
 import { FooditemListComponent } from './components/fooditem/fooditem-list/fooditem-list.component';
 import { FooditemNewComponent } from './components/fooditem/fooditem-new/fooditem-new.component';
 import { FooditemEditComponent } from './components/fooditem/fooditem-edit/fooditem-edit.component';
+import { AuthenticationService } from "./services/authentication.service.client";
+import { AdminUserListComponent } from './components/user/admin-user-list/admin-user-list.component';
+import {AdminServiceClient} from "./services/admin.service.client";
 
 
 @NgModule({
@@ -40,6 +45,7 @@ import { FooditemEditComponent } from './components/fooditem/fooditem-edit/foodi
     FooditemListComponent,
     FooditemNewComponent,
     FooditemEditComponent,
+    AdminUserListComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +59,10 @@ import { FooditemEditComponent } from './components/fooditem/fooditem-edit/foodi
     UserService,
     FoodlogService,
     FooditemService,
-    NutrionixAPIService],
+    NutrionixAPIService,
+    SharedService,
+    AuthenticationService,
+    AdminServiceClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

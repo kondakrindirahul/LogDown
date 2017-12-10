@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { UserService } from "../../../services/user.service.client";
-import { User } from "../../../models/user.model.client";
+import { SharedService } from "../../../services/shares.service.client";
 
 @Component({
   selector: 'app-login',
@@ -12,17 +12,25 @@ export class LoginComponent implements OnInit {
 
   username: String;
   password: String;
+  errorFlag: Boolean;
 
   constructor(private router: Router,
-              private userService: UserService) { }
+              private userService: UserService,
+              private sharedService: SharedService) { }
 
-  login(username: String, password: String) {
-    this.userService.findUserByCredentials(username, password)
-      .subscribe((user: User) => {
-        if (user) {
+  login() {
+
+    if (this.username && this.password) {
+      this.userService
+        .login(this.username, this.password)
+        .subscribe((user) => {
+          this.sharedService.user = user;
           this.router.navigate(['/profile', user._id, 'foodlog']);
-        }
-      });
+        });
+    } else {
+      this.errorFlag = true;
+    }
+
   }
 
   ngOnInit() {

@@ -13,7 +13,7 @@ export class NutrionixAPIService {
 
   searchFoodByName(name: String) {
     const url = 'https://api.nutritionix.com/v1_1/search/' + name +
-      '?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=e6ce2c51&appKey=82b443c9f9191e8bc996127502a53d00';
+      '?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_sugars%2Cnf_dietary_fiber%2Cnf_protein%2Cnf_sodium%2Cnf_total_fat&appId=e6ce2c51&appKey=82b443c9f9191e8bc996127502a53d00';
     return this.http.get(url)
       .map((response: Response) => {
         return response.json();

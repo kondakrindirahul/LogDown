@@ -5,6 +5,7 @@ export class User {
   mail: String;
   firstName: String;
   lastName: String;
+  roles: String[];
 
   constructor(_id, username, password, mail, firstName, lastName) {
     this._id = _id;

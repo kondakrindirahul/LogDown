@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from "../../../services/user.service.client";
 import { Router } from "@angular/router";
+import { SharedService } from "../../../services/shares.service.client";
 
 @Component({
   selector: 'app-register',
@@ -12,27 +13,29 @@ export class RegisterComponent implements OnInit {
   username: String;
   password: String;
   verify_password: String;
+  errorFlag1: Boolean;
+  errorFlag2: Boolean;
 
   constructor(private userService: UserService,
-              private router: Router) { }
+              private router: Router,
+              private sharedService: SharedService) { }
 
-  register(username, password) {
-    this.username = username;
-    this.password = password;
+  register() {
 
-    this.userService.findUserByUsername(username)
-      .subscribe((user) => {
-        if (user === null) {
-          const new_user = {
-            username: this.username,
-            password: this.password
-          };
-          this.userService.createUser(new_user)
-            .subscribe((userFromServer) => {
-              this.router.navigate(['/profile', userFromServer._id]);
-            });
-        }
-      });
+    if(this.username && this.password && this.verify_password) {
+      if (this.password !== this.verify_password) {
+        this.errorFlag1 = true;
+        return;
+      }
+      this.userService.register(this.username, this.password)
+        .subscribe((user) => {
+          this.sharedService.user = user;
+          this.router.navigate(['/profile']);
+        });
+    } else {
+      this.errorFlag2 = true;
+    }
+
 
   }
 

@@ -28,6 +28,11 @@
 <div class="container-fluid">
   <div align="center">
 
+    <div *ngIf="errorFlag"
+         class="alert alert-danger">
+      'Please enter both username and password!!'
+    </div>
+
     <h1>Login</h1>
 
     <input [(ngModel)]="username"
@@ -42,7 +47,7 @@
            id="password"
            class="form-control form-custom"/>
 
-    <a (click)="login(username, password)"
+    <a (click)="login()"
        class="btn btn-primary btn-block btn-custom">
       Login
     </a>

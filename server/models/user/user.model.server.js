@@ -12,13 +12,12 @@ UserModel.updateUser = updateUser;
 module.exports = UserModel;
 
 function createUser(user) {
+  user.roles = ['USER'];
   return UserModel.create(user);
 }
 
 function findAllUsers() {
-  UserModel.find(function (err, docs) {
-    console.log(docs);
-  });
+  return UserModel.find();
 }
 
 function findUserById(userId) {

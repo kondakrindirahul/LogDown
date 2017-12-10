@@ -26,7 +26,10 @@
 
 <div class="container-fluid">
   <div>
-
+    <div *ngIf="errorFlag"
+         class="alert alert-danger">
+      <b>"Enter a Name to Edit the Log!!"</b>
+    </div>
   <label>Log Name</label>
   <input [(ngModel)]="foodlog.name"
          class="form-control"

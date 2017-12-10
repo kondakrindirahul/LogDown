@@ -17,18 +17,22 @@ export class FoodlogNewComponent implements OnInit {
   name: String;
   date: Date;
   errorFlag: Boolean;
-  errorMsg: 'Invalid username or description ! ';
 
   constructor(private foodlogService: FoodlogService,
               private activatedRoute: ActivatedRoute,
               private router: Router) { }
 
   foodlognew() {
-    const foodlog: FoodLog = new FoodLog('', this.name, this.userId, this.date);
-    this.foodlogService.createFoodlog(this.userId, foodlog)
-      .subscribe((foodlogs) => {
-        this.router.navigate(['profile', this.userId, 'foodlog']);
-      });
+    if (this.name) {
+      const foodlog: FoodLog = new FoodLog('', this.name, this.userId, this.date);
+      this.foodlogService.createFoodlog(this.userId, foodlog)
+        .subscribe((foodlogs) => {
+          this.router.navigate(['profile', this.userId, 'foodlog']);
+        });
+    } else {
+      this.errorFlag = true;
+    }
+
   }
 
   ngOnInit() {

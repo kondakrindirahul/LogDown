@@ -28,6 +28,16 @@
 <div class="container">
   <div align="center">
 
+    <div *ngIf="errorFlag1"
+         class="alert alert-danger">
+      The passwords do not match!!
+    </div>
+
+    <div *ngIf="errorFlag2"
+         class="alert alert-danger">
+      <b>Please enter username, password and verify the password!!</b>
+    </div>
+
     <h1>Register</h1>
     <input [(ngModel)]="username"
            placeholder="username"
@@ -43,7 +53,7 @@
            type="password"
            class="form-control form-custom"/>
 
-    <a (click)="register(username, password)"
+    <a (click)="register()"
        class="btn btn-success btn-block btn-custom">
       Register
     </a>

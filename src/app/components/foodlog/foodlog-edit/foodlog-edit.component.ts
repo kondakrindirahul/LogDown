@@ -15,6 +15,7 @@ export class FoodlogEditComponent implements OnInit {
   foodlogs: FoodLog[];
   logId: String;
   foodlog: FoodLog;
+  errorFlag: Boolean;
 
   constructor(private foodlogService: FoodlogService,
               private activatedRoute: ActivatedRoute,
@@ -26,12 +27,18 @@ export class FoodlogEditComponent implements OnInit {
         this.foodlog = foodlog;
       });
 
-    const updatedFoodlog = this.foodlog;
-    this.foodlogService.updateFoodlog(this.userId, updatedFoodlog)
-      .subscribe((foodlogs) => {
-        this.foodlogs = foodlogs;
-        this.router.navigate(['profile', this.userId, 'foodlog']);
-      });
+    if(this.foodlog.name) {
+      const updatedFoodlog = this.foodlog;
+      this.foodlogService.updateFoodlog(this.userId, updatedFoodlog)
+        .subscribe((foodlogs) => {
+          this.foodlogs = foodlogs;
+          this.router.navigate(['profile', this.userId, 'foodlog']);
+        });
+    } else {
+      this.errorFlag = true;
+    }
+
+
   }
 
   deleteFoodlog() {
