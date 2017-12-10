@@ -3,10 +3,12 @@ module.exports = function (app) {
   var fooditemModel = require('../models/fooditem/fooditem.model.server');
 
   app.get("/api/user/:userId/foodlog/:logId/item/:time", findItemByLogIdEvent);
+  app.get("/api/user/:userId/foodlog/:logId/item/:time", findItemByEvent);
   app.get("/api/user/:userId/foodlog/:logId/item", findItemByLogId);
   app.post("/api/user/:userId/foodlog/:logId/item", createFooditem);
   app.delete("/api/user/:userId/foodlog/:logId/item/:itemId", deleteItem);
-  app.get("/api/user/:userId/foodlog/:logId/item/:itemId", findLogById);
+  app.get("/api/user/:userId/foodlog/:logId/item/:itemId", findItemById);
+
 
   function createFooditem(req, res) {
     var logId = req.params['logId'];
@@ -25,7 +27,7 @@ module.exports = function (app) {
       });
   }
 
-  function findLogById(req, res) {
+  function findItemById(req, res) {
     var itemId = req.params['itemId'];
 
     fooditemModel.findItemById(itemId)
@@ -50,6 +52,16 @@ module.exports = function (app) {
     fooditemModel.findItemByLogIdEvent(logId, event)
       .then(function (fooditems) {
         res.json(fooditems);
+      });
+  }
+
+  function findItemByEvent(req, res) {
+    // var itemId = req.params['itemId'];
+    var event = req.params['time'];
+
+    fooditemModel.findItemByEvent(event)
+      .then(function (items) {
+        res.json(items);
       });
   }
 

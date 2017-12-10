@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     this.userService.findUserByCredentials(username, password)
       .subscribe((user: User) => {
         if (user) {
-          this.router.navigate(['/profile', user._id]);
+          this.router.navigate(['/profile', user._id, 'foodlog']);
         }
       });
   }

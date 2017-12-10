@@ -34,12 +34,14 @@ export class FoodlogEditComponent implements OnInit {
       });
   }
 
-  deleteFoodlog(logId) {
-    this.foodlogService.deleteFoodlog(this.userId, logId)
-      .subscribe((foodlogs) => {
-        this.foodlogs = foodlogs;
-        this.router.navigate(['profile', this.userId, 'foodlog']);
-      });
+  deleteFoodlog() {
+    if (this.logId) {
+      this.foodlogService
+        .deleteFoodlog(this.userId, this.logId)
+        .subscribe((foodlog) => {
+          this.router.navigate(['/profile/', this.userId, 'foodlog']);
+        });
+    }
   }
 
   ngOnInit() {
@@ -48,10 +50,16 @@ export class FoodlogEditComponent implements OnInit {
         this.userId = params['userId'];
         this.logId = params['logId'];
 
+        // this.foodlogService
+        //   .findFoodlogsByUser(this.userId)
+        //   .subscribe((foodlogs) => {
+        //     this.foodlogs = foodlogs;
+        //   });
+
         this.foodlogService
-          .findFoodlogsByUser(this.userId)
-          .subscribe((foodlogs) => {
-            this.foodlogs = foodlogs;
+          .findFoodLogById(this.userId, this.logId)
+          .subscribe((foodlog) => {
+            this.foodlog = foodlog;
           });
       });
   }

@@ -295,7 +295,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/fooditem/fooditem-list/fooditem-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a href=\"\"\n         class=\"navbar-brand thick\">\n        <b>Log Down</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\"\n         routerLink=\"/login\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div>\n    <h2>{{userId}}</h2>\n\n    <h3>Food Consumed\n      <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/breakfast\">\n              <span class=\"glyphicon\n              glyphicon-plus-sign\n              pull-right\"></span>\n      </a>\n    </h3>\n\n    <ul class=\"list-group\">\n\n      <li class=\"list-group-item lis-custom\"\n          *ngFor=\"let food of fooditems\">\n        <b>{{food.name}}</b>\n        <p class=\"pull-right\">Calories : {{food.calories}}</p><br>\n        <p>Serving Size: {{food.servingsize}} </p>\n      </li>\n    </ul>\n\n    <!--<h3>Lunch-->\n    <!--<a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/lunch\">-->\n    <!--<span class=\"glyphicon-->\n    <!--glyphicon-plus-sign-->\n    <!--pull-right\"></span>-->\n    <!--</a>-->\n    <!--</h3>-->\n\n    <!--<ul class=\"list-group\">-->\n\n    <!--<li class=\"list-group-item lis-custom\"-->\n    <!--*ngFor=\"let food of fooditems\">-->\n    <!--<b>{{food.name}}</b>-->\n    <!--<p class=\"pull-right\">Calories : {{food.calories}}</p><br>-->\n    <!--<p>Serving Size: {{food.servingSize}}</p>-->\n    <!--</li>-->\n    <!--</ul>-->\n  </div>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a href=\"\"\n         class=\"navbar-brand thick\">\n        <b>Log Down</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\"\n         routerLink=\"/login\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div>\n    <h2 align=\"center\">{{foodlog.name}}</h2>\n\n    <div align=\"\">\n      <h3>Breakfast\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/breakfast\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <ul class=\"list-group\">\n        <li class=\"list-group-item list-custom\"\n            *ngFor=\"let food of breakfast\">\n          <b>{{food.name}}</b>\n          <p class=\"pull-right\">Calories : {{food.calories}}</p><br>\n          <p>Serving Size: {{food.servingsize}} </p>\n        </li>\n      </ul>\n    </div>\n\n\n    <div align=\"\">\n      <h3>Lunch\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/lunch\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <ul class=\"list-group\">\n\n        <li class=\"list-group-item list-custom\"\n            *ngFor=\"let food of lunch\">\n          <b>{{food.name}}</b>\n          <p class=\"pull-right\">Calories : {{food.calories}}</p><br>\n          <p>Serving Size: {{food.servingsize}} </p>\n        </li>\n      </ul>\n    </div>\n\n    <div align=\"\">\n      <h3>Dinner\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/dinner\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <ul class=\"list-group\">\n\n        <li class=\"list-group-item list-custom\"\n            *ngFor=\"let food of dinner\">\n          <b>{{food.name}}</b>\n          <p class=\"pull-right\">Calories : {{food.calories}}</p><br>\n          <p>Serving Size: {{food.servingsize}} </p>\n        </li>\n      </ul>\n    </div>\n\n    <div align=\"\">\n      <h3>Snacks\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/snacks\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <ul class=\"list-group\">\n\n        <li class=\"list-group-item list-custom\"\n            *ngFor=\"let food of snacks\">\n          <b>{{food.name}}</b>\n          <p class=\"pull-right\">Calories : {{food.calories}}</p><br>\n          <p>Serving Size: {{food.servingsize}} </p>\n        </li>\n      </ul>\n    </div>\n\n  </div>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -307,6 +307,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_fooditem_service_client__ = __webpack_require__("../../../../../src/app/services/fooditem.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_foodlog_service_client__ = __webpack_require__("../../../../../src/app/services/foodlog.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -319,13 +320,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FooditemListComponent = (function () {
-    function FooditemListComponent(fooditemService, activatedRoute) {
+    function FooditemListComponent(fooditemService, activatedRoute, foodlogService) {
         this.fooditemService = fooditemService;
         this.activatedRoute = activatedRoute;
+        this.foodlogService = foodlogService;
     }
     FooditemListComponent.prototype.ngOnInit = function () {
         var _this = this;
+        var bk = 'breakfast';
+        var lc = 'lunch';
+        var dn = 'dinner';
+        var sk = 'snacks';
         this.activatedRoute.params
             .subscribe(function (params) {
             _this.userId = params['userId'];
@@ -334,6 +341,31 @@ var FooditemListComponent = (function () {
                 .findItemByLogId(_this.userId, _this.logId)
                 .subscribe(function (fooditems) {
                 _this.fooditems = fooditems;
+            });
+            _this.fooditemService
+                .findItemByLogIdEvent(_this.userId, _this.logId, bk)
+                .subscribe(function (breakfasts) {
+                _this.breakfast = breakfasts;
+            });
+            _this.fooditemService
+                .findItemByLogIdEvent(_this.userId, _this.logId, lc)
+                .subscribe(function (lunches) {
+                _this.lunch = lunches;
+            });
+            _this.fooditemService
+                .findItemByLogIdEvent(_this.userId, _this.logId, dn)
+                .subscribe(function (dinners) {
+                _this.dinner = dinners;
+            });
+            _this.fooditemService
+                .findItemByLogIdEvent(_this.userId, _this.logId, sk)
+                .subscribe(function (snackss) {
+                _this.snacks = snackss;
+            });
+            _this.foodlogService
+                .findFoodLogById(_this.userId, _this.logId)
+                .subscribe(function (foodlog) {
+                _this.foodlog = foodlog;
             });
         });
     };
@@ -345,10 +377,10 @@ FooditemListComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/fooditem/fooditem-list/fooditem-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/fooditem/fooditem-list/fooditem-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_fooditem_service_client__["a" /* FooditemService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_fooditem_service_client__["a" /* FooditemService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_fooditem_service_client__["a" /* FooditemService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_fooditem_service_client__["a" /* FooditemService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_foodlog_service_client__["a" /* FoodlogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_foodlog_service_client__["a" /* FoodlogService */]) === "function" && _c || Object])
 ], FooditemListComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=fooditem-list.component.js.map
 
 /***/ }),
@@ -419,17 +451,58 @@ var FooditemNewComponent = (function () {
         this.name = food.fields.item_name;
         this.calories = food.fields.nf_calories;
         this.servingsize = food.fields.nf_serving_size_qty;
-        var new_item = {
-            name: this.name,
-            logId: this.logId,
-            calories: this.calories,
-            servingsize: this.servingsize,
-            event: "breakfast"
-        };
-        this.fooditemService.createFooditem(this.userId, this.logId, new_item)
-            .subscribe(function (itemFromServer) {
-            _this.router.navigate(['profile', _this.userId, 'foodlog', _this.logId, 'item']);
-        });
+        if (this.event === 'breakfast') {
+            var new_item = {
+                name: this.name,
+                logId: this.logId,
+                calories: this.calories,
+                servingsize: this.servingsize,
+                event: "breakfast"
+            };
+            this.fooditemService.createFooditem(this.userId, this.logId, new_item)
+                .subscribe(function (itemFromServer) {
+                _this.router.navigate(['profile', _this.userId, 'foodlog', _this.logId, 'item']);
+            });
+        }
+        else if (this.event === 'lunch') {
+            var new_item = {
+                name: this.name,
+                logId: this.logId,
+                calories: this.calories,
+                servingsize: this.servingsize,
+                event: "lunch"
+            };
+            this.fooditemService.createFooditem(this.userId, this.logId, new_item)
+                .subscribe(function (itemFromServer) {
+                _this.router.navigate(['profile', _this.userId, 'foodlog', _this.logId, 'item']);
+            });
+        }
+        else if (this.event === 'dinner') {
+            var new_item = {
+                name: this.name,
+                logId: this.logId,
+                calories: this.calories,
+                servingsize: this.servingsize,
+                event: "dinner"
+            };
+            this.fooditemService.createFooditem(this.userId, this.logId, new_item)
+                .subscribe(function (itemFromServer) {
+                _this.router.navigate(['profile', _this.userId, 'foodlog', _this.logId, 'item']);
+            });
+        }
+        else if (this.event === 'snacks') {
+            var new_item = {
+                name: this.name,
+                logId: this.logId,
+                calories: this.calories,
+                servingsize: this.servingsize,
+                event: "snacks"
+            };
+            this.fooditemService.createFooditem(this.userId, this.logId, new_item)
+                .subscribe(function (itemFromServer) {
+                _this.router.navigate(['profile', _this.userId, 'foodlog', _this.logId, 'item']);
+            });
+        }
     };
     FooditemNewComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -437,6 +510,7 @@ var FooditemNewComponent = (function () {
             .subscribe(function (params) {
             _this.userId = params['userId'];
             _this.logId = params['logId'];
+            _this.event = params['time'];
         });
     };
     return FooditemNewComponent;
@@ -476,7 +550,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/foodlog/foodlog-edit/foodlog-edit.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>Edit</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"updateFoodlog(logId)\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n\n  <label>Log Name</label>\n  <input [(ngModel)]=\"foodlog.name\"\n         class=\"form-control\"\n         value=\"{{foodlog.name}}\"/>\n\n  <label>Date</label>\n  <input [(ngModel)]=\"foodlog.dateCreated\"\n         class=\"form-control\"\n         type=\"date\"\n         value=\"{{foodlog.dateCreated}}\"/>\n\n  <a class=\"btn btn-danger btn-block\"\n     (click)=\"deleteFoodlog(logId)\">\n    Delete\n  </a>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>Edit</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"updateFoodlog(logId)\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div>\n\n  <label>Log Name</label>\n  <input [(ngModel)]=\"foodlog.name\"\n         class=\"form-control\"\n         value=\"{{foodlog.name}}\"/>\n\n  <label>Date</label>\n  <input [(ngModel)]=\"foodlog.dateCreated\"\n         class=\"form-control\"\n         type=\"date\"\n         value=\"{{foodlog.dateCreated}}\"/>\n\n  <a class=\"btn btn-danger btn-block\"\n     (click)=\"deleteFoodlog()\">\n    Delete\n  </a>\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
 
 /***/ }),
 
@@ -520,13 +594,15 @@ var FoodlogEditComponent = (function () {
             _this.router.navigate(['profile', _this.userId, 'foodlog']);
         });
     };
-    FoodlogEditComponent.prototype.deleteFoodlog = function (logId) {
+    FoodlogEditComponent.prototype.deleteFoodlog = function () {
         var _this = this;
-        this.foodlogService.deleteFoodlog(this.userId, logId)
-            .subscribe(function (foodlogs) {
-            _this.foodlogs = foodlogs;
-            _this.router.navigate(['profile', _this.userId, 'foodlog']);
-        });
+        if (this.logId) {
+            this.foodlogService
+                .deleteFoodlog(this.userId, this.logId)
+                .subscribe(function (foodlog) {
+                _this.router.navigate(['/profile/', _this.userId, 'foodlog']);
+            });
+        }
     };
     FoodlogEditComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -534,10 +610,15 @@ var FoodlogEditComponent = (function () {
             .subscribe(function (params) {
             _this.userId = params['userId'];
             _this.logId = params['logId'];
+            // this.foodlogService
+            //   .findFoodlogsByUser(this.userId)
+            //   .subscribe((foodlogs) => {
+            //     this.foodlogs = foodlogs;
+            //   });
             _this.foodlogService
-                .findFoodlogsByUser(_this.userId)
-                .subscribe(function (foodlogs) {
-                _this.foodlogs = foodlogs;
+                .findFoodLogById(_this.userId, _this.logId)
+                .subscribe(function (foodlog) {
+                _this.foodlog = foodlog;
             });
         });
     };
@@ -578,7 +659,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/foodlog/foodlog-list/foodlog-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>FoodLogs</b>\n      </a>\n    </p>\n\n    <!--add mark-->\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}/foodlog/new\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item active\">\n      <div class=\"row\">\n        <div class=\"col-xs-9 col-sm-6 col-md-3\">\n          Foodlog Name\n        </div>\n        <div class=\"col-md-3 hidden-xs hidden-sm\">\n          Date\n        </div>\n      </div>\n    </li>\n\n    <div>\n      <li class=\"list-group-item\" *ngFor=\"let foodlog of foodlogs\">\n\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}/item\">\n          {{foodlog.name}}\n        </a>\n\n        <a class=\"pull-right\"\n           routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}\">\n          <span class=\"glyphicon glyphicon-cog\"></span>\n        </a>\n\n      </li>\n    </div>\n\n  </ul>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>FoodLogs</b>\n      </a>\n    </p>\n\n    <!--add mark-->\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}/foodlog/new\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item active\">\n      <div class=\"row\">\n        <div class=\"col-xs-9 col-sm-6\">\n          Foodlog Name\n        </div>\n        <div class=\"col-md-3 hidden-xs\">\n          Date\n        </div>\n      </div>\n    </li>\n\n    <div>\n      <li class=\"list-group-item\" *ngFor=\"let foodlog of foodlogs\">\n        <div class=\"row\">\n          <div class=\"col-xs-9 col-sm-6\">\n            <a routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}/item\">\n              {{foodlog.name}}\n            </a>\n          </div>\n          <div class=\"col-md-3 hidden-xs\">\n            <a routerLink=\"\">\n              {{foodlog.dateCreated}}\n            </a>\n          </div>\n          <div class=\"col-xs-3\">\n            <a class=\"pull-right\"\n               routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}\">\n              <span class=\"glyphicon glyphicon-cog\"></span>\n            </a>\n          </div>\n\n\n        </div>\n\n      </li>\n    </div>\n\n  </ul>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -949,7 +1030,7 @@ var LoginComponent = (function () {
         this.userService.findUserByCredentials(username, password)
             .subscribe(function (user) {
             if (user) {
-                _this.router.navigate(['/profile', user._id]);
+                _this.router.navigate(['/profile', user._id, 'foodlog']);
             }
         });
     };
@@ -1193,7 +1274,7 @@ var FooditemService = (function () {
             'findItemByLogId': this.findItemByLogId,
             'findItemById': this.findItemById,
             'deleteItem': this.deleteItem,
-            'findItemByLogIdEvent': this.findItemByLogIdEvent
+            'findItemByLogIdEvent': this.findItemByLogIdEvent,
         };
     }
     FooditemService.prototype.createFooditem = function (userId, logId, fooditem) {

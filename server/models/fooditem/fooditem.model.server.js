@@ -5,8 +5,9 @@ var fooditemModel = mongoose.model('FooditemModel', fooditemSchema);
 fooditemModel.createFooditem = createFooditem;
 fooditemModel.findItemByLogId = findItemByLogId;
 fooditemModel.findItemById = findItemById;
-fooditemModel.findItemByLogIdEvent = findItemByLogIdEvent;
 fooditemModel.deleteItem = deleteItem;
+fooditemModel.findItemByLogIdEvent =findItemByLogIdEvent;
+fooditemModel.findItemByEvent = findItemByEvent;
 
 module.exports = fooditemModel;
 
@@ -28,10 +29,21 @@ function findItemByLogIdEvent(logId, event) {
     .exec();
 }
 
+function findItemByEvent(event) {
+  return fooditemModel
+    .find({event: event})
+    .populate('logId', 'name')
+    .exec();
+}
+
+// function findItemByTime(time) {
+//   return fooditemModel.findOne({event: {$in: time}});
+// }
+
 function findItemById(itemId) {
   return fooditemModel.findById(itemId);
 }
 
 function deleteItem(itemId) {
-  return pageModel.deleteOne(itemId);
+  return fooditemModel.deleteOne({_id: {$in: itemId}});
 }

@@ -17,7 +17,7 @@ export class FooditemService {
     'findItemByLogId' : this.findItemByLogId,
     'findItemById' : this.findItemById,
     'deleteItem' : this.deleteItem,
-    'findItemByLogIdEvent' : this.findItemByLogIdEvent
+    'findItemByLogIdEvent' : this.findItemByLogIdEvent,
   };
 
   createFooditem(userId, logId, fooditem) {

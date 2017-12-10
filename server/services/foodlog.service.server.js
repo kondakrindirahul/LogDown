@@ -4,9 +4,9 @@ module.exports = function (app) {
 
   app.get("/api/user/:userId/foodlog", findFoodlogsByUser);
   app.post("/api/user/:userId/foodlog", createFoodlog);
+  app.delete("/api/user/:userId/foodlog/:logId", deleteFoodlog);
   app.get("/api/user/:userId/foodlog/:logId", findFoodlogById);
   app.put("/api/user/:userId/foodlog/:logId", updateFoodlog);
-  app.delete("/api/user/:userId/foodlog/:logId", deleteFoodlog);
 
   function createFoodlog(req, res) {
     var userId = req.params['userId'];

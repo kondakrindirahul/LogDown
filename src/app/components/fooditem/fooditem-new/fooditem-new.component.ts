@@ -18,6 +18,7 @@ export class FooditemNewComponent implements OnInit {
   name: String;
   calories: String;
   servingsize: String;
+  event: String;
 
   constructor(private nutrionixService: NutrionixAPIService,
               private activatedRoute: ActivatedRoute,
@@ -37,18 +38,57 @@ export class FooditemNewComponent implements OnInit {
     this.calories = food.fields.nf_calories;
     this.servingsize = food.fields.nf_serving_size_qty;
 
-    const new_item = {
-      name: this.name,
-      logId: this.logId,
-      calories: this.calories,
-      servingsize: this.servingsize,
-      event: "breakfast"
-    };
+    if (this.event === 'breakfast') {
+      const new_item = {
+        name: this.name,
+        logId: this.logId,
+        calories: this.calories,
+        servingsize: this.servingsize,
+        event: "breakfast"
+      };
+      this.fooditemService.createFooditem(this.userId, this.logId, new_item)
+        .subscribe((itemFromServer) => {
+          this.router.navigate(['profile', this.userId, 'foodlog', this.logId, 'item'])
+        });
+    } else if (this.event === 'lunch') {
+      const new_item = {
+        name: this.name,
+        logId: this.logId,
+        calories: this.calories,
+        servingsize: this.servingsize,
+        event: "lunch"
+      };
+      this.fooditemService.createFooditem(this.userId, this.logId, new_item)
+        .subscribe((itemFromServer) => {
+          this.router.navigate(['profile', this.userId, 'foodlog', this.logId, 'item'])
+        });
+    } else if (this.event === 'dinner') {
+      const new_item = {
+        name: this.name,
+        logId: this.logId,
+        calories: this.calories,
+        servingsize: this.servingsize,
+        event: "dinner"
+      };
+      this.fooditemService.createFooditem(this.userId, this.logId, new_item)
+        .subscribe((itemFromServer) => {
+          this.router.navigate(['profile', this.userId, 'foodlog', this.logId, 'item'])
+        });
+    } else if (this.event === 'snacks') {
+      const new_item = {
+        name: this.name,
+        logId: this.logId,
+        calories: this.calories,
+        servingsize: this.servingsize,
+        event: "snacks"
+      };
+      this.fooditemService.createFooditem(this.userId, this.logId, new_item)
+        .subscribe((itemFromServer) => {
+          this.router.navigate(['profile', this.userId, 'foodlog', this.logId, 'item'])
+        });
+    }
 
-    this.fooditemService.createFooditem(this.userId, this.logId, new_item)
-      .subscribe((itemFromServer) => {
-        this.router.navigate(['profile', this.userId, 'foodlog', this.logId, 'item'])
-      });
+
   }
 
   ngOnInit() {
@@ -56,6 +96,7 @@ export class FooditemNewComponent implements OnInit {
       .subscribe((params: any) => {
         this.userId = params['userId'];
         this.logId = params['logId'];
+        this.event = params['time'];
       });
   }
 

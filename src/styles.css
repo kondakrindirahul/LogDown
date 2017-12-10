@@ -4,6 +4,10 @@ input {
   margin-bottom: 5px;
 }
 
+.custom-fooditemlist {
+  width: 70%;
+}
+
 .form-custom {
   width: 50%;
 }

@@ -25,6 +25,7 @@
 </nav>
 
 <div class="container-fluid">
+  <div>
 
   <label>Log Name</label>
   <input [(ngModel)]="foodlog.name"
@@ -38,9 +39,10 @@
          value="{{foodlog.dateCreated}}"/>
 
   <a class="btn btn-danger btn-block"
-     (click)="deleteFoodlog(logId)">
+     (click)="deleteFoodlog()">
     Delete
   </a>
+  </div>
 
 </div>
 

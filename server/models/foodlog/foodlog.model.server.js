@@ -5,8 +5,8 @@ var foodlogModel = mongoose.model('FoodlogModel', foodlogSchema);
 foodlogModel.createFoodlog = createFoodlog;
 foodlogModel.findFoodlogsByUser = findFoodlogsByUser;
 foodlogModel.findFoodLogById = findFoodlogById;
-foodlogModel.updateFoodlog = updateFoodlog;
 foodlogModel.deleteFoodlog = deleteFoodlog;
+foodlogModel.updateFoodlog = updateFoodlog;
 
 module.exports = foodlogModel;
 
@@ -30,5 +30,5 @@ function updateFoodlog(logId, foodlog) {
 }
 
 function deleteFoodlog(logId) {
-  return foodlogModel.deleteOne(logId);
+  return foodlogModel.deleteOne({_id: {$in: logId}});
 }
