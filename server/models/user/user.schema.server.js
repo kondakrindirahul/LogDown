@@ -6,6 +6,10 @@ var UserSchema = mongoose.Schema({
   mail: String,
   firstName: String,
   lastName: String,
+  facebook: {
+    id:    String,
+    token: String
+  },
   roles: [{
     type: String,
     default: 'USER',

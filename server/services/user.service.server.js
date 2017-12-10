@@ -4,8 +4,50 @@ module.exports = function (app) {
 
   var bcrypt = require("bcrypt-nodejs");
   var passport  = require('passport');
+
   passport.serializeUser(serializeUser);
   passport.deserializeUser(deserializeUser);
+  var FacebookStrategy = require('passport-facebook').Strategy;
+
+  var facebookConfig = {
+    clientID     : process.env.FACEBOOK_CLIENT_ID,
+    clientSecret : process.env.FACEBOOK_CLIENT_SECRET,
+    callbackURL  : process.env.FACEBOOK_CALLBACK_URL
+  };
+
+  passport.use(
+    new FacebookStrategy(facebookConfig, facebookStrategy));
+
+  function facebookStrategy(token, refreshToken, profile, done)
+  {
+    userModel.findUserByFacebookId(profile.id)
+      .then(function(user) {
+        if(user) { return done(null, user); } // already in db
+        else { // if not, insert into db using profile info
+          var names = profile.displayName.split(" ");
+          var newFacebookUser = { lastName:  names[1],
+            firstName: names[0],
+            email:     profile.emails ? profile.emails[0].value:"",
+            facebook: { id: profile.id, token: token }
+          };
+          return userModel.createUser(newFacebookUser);
+        }
+      })
+      .then(
+        function(user){
+          return done(null, user);
+        });
+
+  }
+
+  app.get ('/facebook/login',
+    passport.authenticate('facebook', { scope : 'email' }));
+
+  app.get ('/auth/facebook/callback',
+    passport.authenticate('facebook', {
+      successRedirect: '/profile',
+      failureRedirect: '/login'
+    }));
 
   var LocalStrategy = require('passport-local').Strategy;
   passport.use(new LocalStrategy(localStrategy));
