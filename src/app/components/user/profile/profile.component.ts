@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
   firstName: String;
   lastName: String;
   password: String;
+  errorFlag: Boolean;
 
   constructor(private activatedRoute: ActivatedRoute,
               private userService: UserService,
@@ -44,6 +45,13 @@ export class ProfileComponent implements OnInit {
       });
   }
 
+  checkUser(user) {
+    if (user.roles.indexOf('ADMIN') > -1) {
+      this.router.navigate(['/admin', 'user']);
+    } else {
+      this.errorFlag = true;
+    }
+  }
 
   ngOnInit() {
     this.user = this.sharedService.user;

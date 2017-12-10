@@ -68,8 +68,19 @@
     FoodLog List
   </a>
 
+  <div *ngIf="errorFlag"
+       class="alert alert-danger">
+    'The current user is not an admin!!'
+  </div>
+
+  <a routerLink="/admin/user"
+     class="btn btn-danger btn-block "
+     (click)="checkUser()">
+    Users
+  </a>
+
   <a class="btn btn-danger btn-block "
-     (click)="logout()">Logout</a>
+     (click)="logout(user)">Logout</a>
 
 </div>
 

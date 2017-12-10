@@ -13,6 +13,8 @@ import { FoodlogNewComponent } from "./components/foodlog/foodlog-new/foodlog-ne
 import { FooditemListComponent } from "./components/fooditem/fooditem-list/fooditem-list.component";
 import { FooditemNewComponent } from "./components/fooditem/fooditem-new/fooditem-new.component";
 import { AdminUserListComponent } from "./components/user/admin-user-list/admin-user-list.component";
+import { AdminCreateUserComponent } from "./components/user/admin-create-user/admin-create-user.component";
+import { AdminEditUserComponent } from "./components/user/admin-edit-user/admin-edit-user.component";
 
 import { AuthenticationService } from "./services/authentication.service.client";
 import { AdminServiceClient } from "./services/admin.service.client";
@@ -22,8 +24,11 @@ const APP_ROUTES: Routes = [
   {path: 'test', component: TestComponent},
   {path: 'login', component: LoginComponent},
   {path: 'admin/user', component: AdminUserListComponent, canActivate: [AdminServiceClient] },
+  {path: 'admin/user/new', component: AdminCreateUserComponent, pathMatch: 'full'},
+  {path: 'admin/user/:userId', component: AdminEditUserComponent, pathMatch: 'full'},
   {path: 'register', component: RegisterComponent},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthenticationService] },
+  {path: 'profile/:userId', component: ProfileComponent, canActivate: [AuthenticationService] },
   {path: 'profile/:userId/foodlog', component: FoodlogListComponent, canActivate: [AuthenticationService], pathMatch: 'full'},
   {path: 'profile/:userId/foodlog/new', component: FoodlogNewComponent, canActivate: [AuthenticationService], pathMatch: 'full'},
   {path: 'profile/:userId/foodlog/:logId', component: FoodlogEditComponent, canActivate: [AuthenticationService], pathMatch: 'full'},

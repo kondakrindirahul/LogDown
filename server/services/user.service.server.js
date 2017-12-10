@@ -9,6 +9,12 @@ module.exports = function (app) {
   passport.deserializeUser(deserializeUser);
   var FacebookStrategy = require('passport-facebook').Strategy;
 
+  // var facebookConfig = {
+  //   clientID     : '198588557373749',
+  //   clientSecret : '0b4bdc61f440a8525da1068eb4581d9b',
+  //   callbackURL  : 'https://logdownproject.herokuapp.com/auth/facebook/callback'
+  // };
+
   var facebookConfig = {
     clientID     : process.env.FACEBOOK_CLIENT_ID,
     clientSecret : process.env.FACEBOOK_CLIENT_SECRET,

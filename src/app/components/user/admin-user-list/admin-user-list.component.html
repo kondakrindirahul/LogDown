@@ -1,7 +1,47 @@
-<h1>User List</h1>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
 
-<ul>
-  <li *ngFor="let user of users">
-    {{user.username}}
-  </li>
-</ul>
+    <!--heading on the nav bar-->
+    <p class="navbar-header pull-left">
+      <a class="navbar-brand thick">
+        <b>User List</b>
+      </a>
+    </p>
+
+    <!--add mark-->
+    <p class="navbar-text pull-right">
+      <a class="navbar-link"
+         routerLink="/admin/user/new">
+        <span class="glyphicon glyphicon-plus"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <h1>User List</h1>
+
+  <ul class="list-group">
+    <li *ngFor="let user of users"
+        class="list-group-item list-custom">
+      <a routerLink="/admin/user/{{user._id}}">
+        {{user.username}}
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a >
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>

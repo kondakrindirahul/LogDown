@@ -28,6 +28,8 @@ import { FooditemEditComponent } from './components/fooditem/fooditem-edit/foodi
 import { AuthenticationService } from "./services/authentication.service.client";
 import { AdminUserListComponent } from './components/user/admin-user-list/admin-user-list.component';
 import {AdminServiceClient} from "./services/admin.service.client";
+import { AdminCreateUserComponent } from './components/user/admin-create-user/admin-create-user.component';
+import { AdminEditUserComponent } from './components/user/admin-edit-user/admin-edit-user.component';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import {AdminServiceClient} from "./services/admin.service.client";
     FooditemNewComponent,
     FooditemEditComponent,
     AdminUserListComponent,
+    AdminCreateUserComponent,
+    AdminEditUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -97,12 +97,16 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_authentication_service_client__ = __webpack_require__("../../../../../src/app/services/authentication.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_user_admin_user_list_admin_user_list_component__ = __webpack_require__("../../../../../src/app/components/user/admin-user-list/admin-user-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_admin_service_client__ = __webpack_require__("../../../../../src/app/services/admin.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_user_admin_create_user_admin_create_user_component__ = __webpack_require__("../../../../../src/app/components/user/admin-create-user/admin-create-user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_user_admin_edit_user_admin_edit_user_component__ = __webpack_require__("../../../../../src/app/components/user/admin-edit-user/admin-edit-user.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -151,6 +155,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_21__components_fooditem_fooditem_new_fooditem_new_component__["a" /* FooditemNewComponent */],
             __WEBPACK_IMPORTED_MODULE_22__components_fooditem_fooditem_edit_fooditem_edit_component__["a" /* FooditemEditComponent */],
             __WEBPACK_IMPORTED_MODULE_24__components_user_admin_user_list_admin_user_list_component__["a" /* AdminUserListComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__components_user_admin_create_user_admin_create_user_component__["a" /* AdminCreateUserComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__components_user_admin_edit_user_admin_edit_user_component__["a" /* AdminEditUserComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -194,8 +200,12 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_fooditem_fooditem_list_fooditem_list_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-list/fooditem-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_fooditem_fooditem_new_fooditem_new_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-new/fooditem-new.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_user_admin_user_list_admin_user_list_component__ = __webpack_require__("../../../../../src/app/components/user/admin-user-list/admin-user-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__ = __webpack_require__("../../../../../src/app/services/authentication.service.client.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_admin_service_client__ = __webpack_require__("../../../../../src/app/services/admin.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_user_admin_create_user_admin_create_user_component__ = __webpack_require__("../../../../../src/app/components/user/admin-create-user/admin-create-user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_user_admin_edit_user_admin_edit_user_component__ = __webpack_require__("../../../../../src/app/components/user/admin-edit-user/admin-edit-user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_authentication_service_client__ = __webpack_require__("../../../../../src/app/services/authentication.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_admin_service_client__ = __webpack_require__("../../../../../src/app/services/admin.service.client.ts");
+
+
 
 
 
@@ -214,14 +224,17 @@ var APP_ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_1__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'test', component: __WEBPACK_IMPORTED_MODULE_2__components_test_test_component__["a" /* TestComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_3__components_user_login_login_component__["a" /* LoginComponent */] },
-    { path: 'admin/user', component: __WEBPACK_IMPORTED_MODULE_11__components_user_admin_user_list_admin_user_list_component__["a" /* AdminUserListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_admin_service_client__["a" /* AdminServiceClient */]] },
+    { path: 'admin/user', component: __WEBPACK_IMPORTED_MODULE_11__components_user_admin_user_list_admin_user_list_component__["a" /* AdminUserListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__services_admin_service_client__["a" /* AdminServiceClient */]] },
+    { path: 'admin/user/new', component: __WEBPACK_IMPORTED_MODULE_12__components_user_admin_create_user_admin_create_user_component__["a" /* AdminCreateUserComponent */], pathMatch: 'full' },
+    { path: 'admin/user/:userId', component: __WEBPACK_IMPORTED_MODULE_13__components_user_admin_edit_user_admin_edit_user_component__["a" /* AdminEditUserComponent */], pathMatch: 'full' },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_4__components_user_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_5__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]] },
-    { path: 'profile/:userId/foodlog', component: __WEBPACK_IMPORTED_MODULE_6__components_foodlog_foodlog_list_foodlog_list_component__["a" /* FoodlogListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
-    { path: 'profile/:userId/foodlog/new', component: __WEBPACK_IMPORTED_MODULE_8__components_foodlog_foodlog_new_foodlog_new_component__["a" /* FoodlogNewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
-    { path: 'profile/:userId/foodlog/:logId', component: __WEBPACK_IMPORTED_MODULE_7__components_foodlog_foodlog_edit_foodlog_edit_component__["a" /* FoodlogEditComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
-    { path: 'profile/:userId/foodlog/:logId/item', component: __WEBPACK_IMPORTED_MODULE_9__components_fooditem_fooditem_list_fooditem_list_component__["a" /* FooditemListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
-    { path: 'profile/:userId/foodlog/:logId/item/:time', component: __WEBPACK_IMPORTED_MODULE_10__components_fooditem_fooditem_new_fooditem_new_component__["a" /* FooditemNewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' }
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_5__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_authentication_service_client__["a" /* AuthenticationService */]] },
+    { path: 'profile/:userId', component: __WEBPACK_IMPORTED_MODULE_5__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_authentication_service_client__["a" /* AuthenticationService */]] },
+    { path: 'profile/:userId/foodlog', component: __WEBPACK_IMPORTED_MODULE_6__components_foodlog_foodlog_list_foodlog_list_component__["a" /* FoodlogListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
+    { path: 'profile/:userId/foodlog/new', component: __WEBPACK_IMPORTED_MODULE_8__components_foodlog_foodlog_new_foodlog_new_component__["a" /* FoodlogNewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
+    { path: 'profile/:userId/foodlog/:logId', component: __WEBPACK_IMPORTED_MODULE_7__components_foodlog_foodlog_edit_foodlog_edit_component__["a" /* FoodlogEditComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
+    { path: 'profile/:userId/foodlog/:logId/item', component: __WEBPACK_IMPORTED_MODULE_9__components_fooditem_fooditem_list_fooditem_list_component__["a" /* FooditemListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' },
+    { path: 'profile/:userId/foodlog/:logId/item/:time', component: __WEBPACK_IMPORTED_MODULE_10__components_fooditem_fooditem_new_fooditem_new_component__["a" /* FooditemNewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_authentication_service_client__["a" /* AuthenticationService */]], pathMatch: 'full' }
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forRoot(APP_ROUTES);
@@ -1038,6 +1051,157 @@ var _a;
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/user/admin-create-user/admin-create-user.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/user/admin-create-user/admin-create-user.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>New User</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"newUser()\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div class=\"form-group\">\n    <label>User Name</label>\n    <input [(ngModel)]='name'\n           type=\"text\"\n           class=\"form-control form-custom\"\n           placeholder=\"Alice\">\n  </div>\n  <div class=\"form-group form-custom\">\n    <label>Password</label>\n    <input [(ngModel)]='password'\n           type=\"text\"\n           class=\"form-control\">\n  </div>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n    </p>\n\n  </div>\n</nav>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/user/admin-create-user/admin-create-user.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCreateUserComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_user_model_client__ = __webpack_require__("../../../../../src/app/models/user.model.client.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AdminCreateUserComponent = (function () {
+    function AdminCreateUserComponent(userService, router) {
+        this.userService = userService;
+        this.router = router;
+    }
+    // foodlognew() {
+    //   if (this.name) {
+    //     const foodlog: FoodLog = new FoodLog('', this.name, this.userId, this.date);
+    //     this.foodlogService.createFoodlog(this.userId, foodlog)
+    //       .subscribe((foodlogs) => {
+    //         this.router.navigate(['profile', this.userId, 'foodlog']);
+    //       });
+    //   } else {
+    //     this.errorFlag = true;
+    //   }
+    //
+    // }
+    AdminCreateUserComponent.prototype.newUser = function () {
+        var _this = this;
+        var new_user = new __WEBPACK_IMPORTED_MODULE_3__models_user_model_client__["a" /* User */]('', this.name, this.password, '', '', '');
+        this.userService.createUser(new_user)
+            .subscribe(function (users) {
+            _this.router.navigate(['/admin', 'user']);
+        });
+    };
+    AdminCreateUserComponent.prototype.ngOnInit = function () {
+    };
+    return AdminCreateUserComponent;
+}());
+AdminCreateUserComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-admin-create-user',
+        template: __webpack_require__("../../../../../src/app/components/user/admin-create-user/admin-create-user.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/user/admin-create-user/admin-create-user.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], AdminCreateUserComponent);
+
+var _a, _b;
+//# sourceMappingURL=admin-create-user.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/user/admin-edit-user/admin-edit-user.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/user/admin-edit-user/admin-edit-user.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  admin-edit-user works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/user/admin-edit-user/admin-edit-user.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminEditUserComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AdminEditUserComponent = (function () {
+    function AdminEditUserComponent() {
+    }
+    AdminEditUserComponent.prototype.ngOnInit = function () {
+    };
+    return AdminEditUserComponent;
+}());
+AdminEditUserComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-admin-edit-user',
+        template: __webpack_require__("../../../../../src/app/components/user/admin-edit-user/admin-edit-user.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/user/admin-edit-user/admin-edit-user.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], AdminEditUserComponent);
+
+//# sourceMappingURL=admin-edit-user.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/user/admin-user-list/admin-user-list.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1059,7 +1223,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/admin-user-list/admin-user-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>User List</h1>\n\n<ul>\n  <li *ngFor=\"let user of users\">\n    {{user.username}}\n  </li>\n</ul>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>User List</b>\n      </a>\n    </p>\n\n    <!--add mark-->\n    <p class=\"navbar-text pull-right\">\n      <a class=\"navbar-link\"\n         routerLink=\"/admin/user/new\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <h1>User List</h1>\n\n  <ul class=\"list-group\">\n    <li *ngFor=\"let user of users\"\n        class=\"list-group-item list-custom\">\n      <a routerLink=\"/admin/user/{{user._id}}\">\n        {{user.username}}\n      </a>\n    </li>\n  </ul>\n\n</div>\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a >\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1130,7 +1294,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a routerLink=\"\"\n         class=\"navbar-brand thick\">\n        <b>LogDown</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div align=\"center\">\n\n    <div *ngIf=\"errorFlag\"\n         class=\"alert alert-danger\">\n      'Please enter both username and password!!'\n    </div>\n\n    <h1>Login</h1>\n\n    <input [(ngModel)]=\"username\"\n           placeholder=\"alice\"\n           type=\"text\"\n           id=\"username\"\n           class=\"form-control form-custom\"/>\n\n    <input [(ngModel)]=\"password\"\n           placeholder=\"123!123\"\n           type=\"password\"\n           id=\"password\"\n           class=\"form-control form-custom\"/>\n\n    <a (click)=\"login()\"\n       class=\"btn btn-primary btn-block btn-custom\">\n      Login\n    </a>\n\n    <a href=\"{{base_url}}/facebook/login\" class=\"btn btn-primary btn-block\">\n      <span class=\"fa fa-facebook\"></span>\n      Facebook\n    </a>\n\n    <a routerLink=\"/register\"\n       class=\"btn btn-success btn-block btn-custom\">\n      Register\n    </a>\n  </div>\n\n</div>\n\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a routerLink=\"\"\n         class=\"navbar-brand thick\">\n        <b>LogDown</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div align=\"center\">\n\n    <div *ngIf=\"errorFlag\"\n         class=\"alert alert-danger\">\n      'Please enter both username and password!!'\n    </div>\n\n    <h1>Login</h1>\n\n    <input [(ngModel)]=\"username\"\n           placeholder=\"alice\"\n           type=\"text\"\n           id=\"username\"\n           class=\"form-control form-custom\"/>\n\n    <input [(ngModel)]=\"password\"\n           placeholder=\"123!123\"\n           type=\"password\"\n           id=\"password\"\n           class=\"form-control form-custom\"/>\n\n    <a (click)=\"login()\"\n       class=\"btn btn-primary btn-block btn-custom\">\n      Login\n    </a>\n\n    <a href=\"{{base_url}}/facebook/login\"\n       class=\"btn btn-primary btn-block btn-custom\">\n      <span class=\"fa fa-facebook\"></span>\n      Facebook\n    </a>\n\n    <a routerLink=\"/register\"\n       class=\"btn btn-success btn-block btn-custom\">\n      Register\n    </a>\n  </div>\n\n</div>\n\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1172,7 +1336,8 @@ var LoginComponent = (function () {
                 .login(this.username, this.password)
                 .subscribe(function (user) {
                 _this.sharedService.user = user;
-                _this.router.navigate(['/profile', user._id, 'foodlog']);
+                // this.router.navigate(['/profile', user._id, 'foodlog']);
+                _this.router.navigate(['/profile']);
             });
         }
         else {
@@ -1218,7 +1383,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>Profile</b>\n      </a>\n    </p>\n\n    <!--tick mark-->\n    <p class=\"navbar-text pull-right\">\n      <a class=\"navbar-link\"\n         (click)=\"update()\">\n        <span class=\"glyphicon glyphicon-ok\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n\n<div class=\"container container-fluid\">\n  <form>\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input [(ngModel)]=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             name=\"username\"\n             placeholder=\"alice\"\n             id=\"username\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input [(ngModel)]=\"mail\"\n             type=\"email\"\n             class=\"form-control\"\n             id=\"email\"\n             name=\"mail\"\n             placeholder=\"alice.wonderland@unicorn.com\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input [(ngModel)]=\"firstName\"\n             type=\"text\"\n             class=\"form-control\"\n             name=\"firstName\"\n             id=\"first-name\"\n             placeholder=\"Alice\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input [(ngModel)]=\"lastName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"last-name\"\n             name=\"lastName\"\n             placeholder=\"Wonderland\">\n    </div>\n  </form>\n\n  <a class=\"btn btn-primary btn-block \"\n     (click)=\"update()\">Update</a>\n\n  <a class=\"btn btn-success btn-block\"\n     routerLink=\"/profile/{{user._id}}/foodlog\">\n    FoodLog List\n  </a>\n\n  <a class=\"btn btn-danger btn-block \"\n     (click)=\"logout()\">Logout</a>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a >\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>Profile</b>\n      </a>\n    </p>\n\n    <!--tick mark-->\n    <p class=\"navbar-text pull-right\">\n      <a class=\"navbar-link\"\n         (click)=\"update()\">\n        <span class=\"glyphicon glyphicon-ok\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n\n<div class=\"container container-fluid\">\n  <form>\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input [(ngModel)]=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             name=\"username\"\n             placeholder=\"alice\"\n             id=\"username\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input [(ngModel)]=\"mail\"\n             type=\"email\"\n             class=\"form-control\"\n             id=\"email\"\n             name=\"mail\"\n             placeholder=\"alice.wonderland@unicorn.com\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input [(ngModel)]=\"firstName\"\n             type=\"text\"\n             class=\"form-control\"\n             name=\"firstName\"\n             id=\"first-name\"\n             placeholder=\"Alice\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input [(ngModel)]=\"lastName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"last-name\"\n             name=\"lastName\"\n             placeholder=\"Wonderland\">\n    </div>\n  </form>\n\n  <a class=\"btn btn-primary btn-block \"\n     (click)=\"update()\">Update</a>\n\n  <a class=\"btn btn-success btn-block\"\n     routerLink=\"/profile/{{user._id}}/foodlog\">\n    FoodLog List\n  </a>\n\n  <div *ngIf=\"errorFlag\"\n       class=\"alert alert-danger\">\n    'The current user is not an admin!!'\n  </div>\n\n  <a routerLink=\"/admin/user\"\n     class=\"btn btn-danger btn-block \"\n     (click)=\"checkUser()\">\n    Users\n  </a>\n\n  <a class=\"btn btn-danger btn-block \"\n     (click)=\"logout(user)\">Logout</a>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a >\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1268,6 +1433,14 @@ var ProfileComponent = (function () {
             .subscribe(function (status) {
             _this.router.navigate(['/login']);
         });
+    };
+    ProfileComponent.prototype.checkUser = function (user) {
+        if (user.roles.indexOf('ADMIN') > -1) {
+            this.router.navigate(['/admin', 'user']);
+        }
+        else {
+            this.errorFlag = true;
+        }
     };
     ProfileComponent.prototype.ngOnInit = function () {
         this.user = this.sharedService.user;
@@ -1398,6 +1571,27 @@ var FoodLog = (function () {
 }());
 
 //# sourceMappingURL=foodlog.model.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/models/user.model.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
+var User = (function () {
+    function User(_id, username, password, mail, firstName, lastName) {
+        this._id = _id;
+        this.username = username;
+        this.password = password;
+        this.mail = mail;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    return User;
+}());
+
+//# sourceMappingURL=user.model.client.js.map
 
 /***/ }),
 

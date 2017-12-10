@@ -1,0 +1,50 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!--adding the back glyphicon-->
+    <p class="navbar-text pull-left">
+      <a routerLink="/profile/{{userId}}/foodlog"
+         class="navbar-link">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+    </p>
+    <p class="navbar-header pull-left">
+      <a class="navbar-brand thick">
+        <b>New User</b>
+      </a>
+    </p>
+    <p class="navbar-text pull-right">
+      <a (click)="newUser()"
+         class="navbar-link">
+        <span class="glyphicon glyphicon-ok">
+        </span>
+      </a>
+    </p>
+
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="form-group">
+    <label>User Name</label>
+    <input [(ngModel)]='name'
+           type="text"
+           class="form-control form-custom"
+           placeholder="Alice">
+  </div>
+  <div class="form-group form-custom">
+    <label>Password</label>
+    <input [(ngModel)]='password'
+           type="text"
+           class="form-control">
+  </div>
+</div>
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+    </p>
+
+  </div>
+</nav>
