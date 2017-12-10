@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewChecked } from '@angular/core';
 import { FooditemService } from "../../../services/fooditem.service.client";
 import { Fooditem } from "../../../models/fooditem.model.client";
 import { ActivatedRoute } from "@angular/router";
 import { FoodLog } from "../../../models/foodlog.model.client";
 import { FoodlogService } from "../../../services/foodlog.service.client";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-fooditem-list',
@@ -11,6 +12,8 @@ import { FoodlogService } from "../../../services/foodlog.service.client";
   styleUrls: ['./fooditem-list.component.css']
 })
 export class FooditemListComponent implements OnInit {
+
+  // declare var $: any;
 
   userId: String;
   foodlog: FoodLog;
@@ -23,7 +26,16 @@ export class FooditemListComponent implements OnInit {
 
   constructor(private fooditemService: FooditemService,
               private activatedRoute: ActivatedRoute,
-              private foodlogService: FoodlogService) { }
+              private foodlogService: FoodlogService,
+              private router: Router) { }
+
+  deleteItem(itemId) {
+    this.fooditemService.deleteItem(this.userId, this.logId, itemId)
+      .subscribe((fooditems) => {
+        this.fooditems = fooditems;
+        this.router.navigate(['profile', this.userId, 'foodlog']);
+      });
+  }
 
   ngOnInit() {
 

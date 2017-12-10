@@ -42,8 +42,15 @@
       <ul class="list-group">
         <li class="list-group-item list-custom"
             *ngFor="let food of breakfast">
-          <b>{{food.name}}</b>
-          <p class="pull-right">Calories : {{food.calories}}</p><br>
+          <p> <b>{{food.name}}</b>
+            <span class="glyphicon glyphicon-fire">
+            </span>
+            Calories : {{food.calories}}</p>
+          <a (click)="deleteItem(food._id)">
+            <span class="glyphicon glyphicon-remove-sign pull-right">
+            </span>
+          </a>
+          <br>
           <p>Serving Size: {{food.servingsize}} </p>
         </li>
       </ul>
@@ -59,15 +66,19 @@
         </a>
       </h3>
 
-      <ul class="list-group">
-
-        <li class="list-group-item list-custom"
-            *ngFor="let food of lunch">
-          <b>{{food.name}}</b>
-          <p class="pull-right">Calories : {{food.calories}}</p><br>
-          <p>Serving Size: {{food.servingsize}} </p>
-        </li>
-      </ul>
+      <li class="list-group-item list-custom"
+          *ngFor="let food of lunch">
+        <p> <b>{{food.name}}</b>
+          <span class="glyphicon glyphicon-fire">
+            </span>
+          Calories : {{food.calories}}</p>
+        <a (click)="deleteItem(food._id)">
+            <span class="glyphicon glyphicon-remove-sign pull-right">
+            </span>
+        </a>
+        <br>
+        <p>Serving Size: {{food.servingsize}} </p>
+      </li>
     </div>
 
     <div align="">
@@ -83,8 +94,15 @@
 
         <li class="list-group-item list-custom"
             *ngFor="let food of dinner">
-          <b>{{food.name}}</b>
-          <p class="pull-right">Calories : {{food.calories}}</p><br>
+          <p> <b>{{food.name}}</b>
+            <span class="glyphicon glyphicon-fire">
+            </span>
+            Calories : {{food.calories}}</p>
+          <a (click)="deleteItem(food._id)">
+            <span class="glyphicon glyphicon-remove-sign pull-right">
+            </span>
+          </a>
+          <br>
           <p>Serving Size: {{food.servingsize}} </p>
         </li>
       </ul>
@@ -103,8 +121,15 @@
 
         <li class="list-group-item list-custom"
             *ngFor="let food of snacks">
-          <b>{{food.name}}</b>
-          <p class="pull-right">Calories : {{food.calories}}</p><br>
+          <p> <b>{{food.name}}</b>
+            <span class="glyphicon glyphicon-fire">
+            </span>
+            Calories : {{food.calories}}</p>
+          <a (click)="deleteItem(food._id)">
+            <span class="glyphicon glyphicon-remove-sign pull-right">
+            </span>
+          </a>
+          <br>
           <p>Serving Size: {{food.servingsize}} </p>
         </li>
       </ul>
