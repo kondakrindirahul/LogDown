@@ -4,6 +4,9 @@ var fooditemSchema = mongoose.Schema({
   logId: String,
   calories: String,
   servingsize: String,
+  brandname: String,
+  servingUnit: String,
+  fatContent: String,
   event: ['breakfast', 'lunch', 'dinner', 'snacks']
 }, {collection: 'fooditem'});
 module.exports = fooditemSchema;

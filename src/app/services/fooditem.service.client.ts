@@ -7,6 +7,7 @@ import { Fooditem } from "../models/fooditem.model.client";
 @Injectable()
 export class FooditemService {
 
+  client_items: Fooditem[];
 
   constructor(private http: Http) {}
 
@@ -18,7 +19,18 @@ export class FooditemService {
     'findItemById' : this.findItemById,
     'deleteItem' : this.deleteItem,
     'findItemByLogIdEvent' : this.findItemByLogIdEvent,
+    'clientItem' : this.clientItem,
+    'findClientItem' : this.findClientItem
   };
+
+  clientItem(item) {
+    this.client_items.push(item);
+    return item;
+  }
+
+  findClientItem() {
+    return this.client_items[0];
+  }
 
   createFooditem(userId, logId, fooditem) {
     const url = this.domain_url + '/api/user/' + userId + '/foodlog/' + logId + '/item';

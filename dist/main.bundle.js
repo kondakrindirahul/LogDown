@@ -141,7 +141,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_18__components_foodlog_foodlog_new_foodlog_new_component__["a" /* FoodlogNewComponent */],
             __WEBPACK_IMPORTED_MODULE_19__components_fooditem_fooditem_list_fooditem_list_component__["a" /* FooditemListComponent */],
             __WEBPACK_IMPORTED_MODULE_20__components_fooditem_fooditem_new_fooditem_new_component__["a" /* FooditemNewComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__components_fooditem_fooditem_edit_fooditem_edit_component__["a" /* FooditemEditComponent */]
+            __WEBPACK_IMPORTED_MODULE_21__components_fooditem_fooditem_edit_fooditem_edit_component__["a" /* FooditemEditComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -181,9 +181,6 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_foodlog_foodlog_new_foodlog_new_component__ = __webpack_require__("../../../../../src/app/components/foodlog/foodlog-new/foodlog-new.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_fooditem_fooditem_list_fooditem_list_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-list/fooditem-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_fooditem_fooditem_new_fooditem_new_component__ = __webpack_require__("../../../../../src/app/components/fooditem/fooditem-new/fooditem-new.component.ts");
-/**
- * Created by sesha on 7/26/17.
- */
 
 
 
@@ -335,6 +332,7 @@ var FooditemListComponent = (function () {
             .subscribe(function (fooditems) {
             _this.fooditems = fooditems;
             _this.router.navigate(['profile', _this.userId, 'foodlog']);
+            // this.router.navigate(['profile', this.userId, 'foodlog', this.logId, 'item'])
         });
     };
     FooditemListComponent.prototype.ngOnInit = function () {
@@ -416,7 +414,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/fooditem/fooditem-new/fooditem-new.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a href=\"\"\n         class=\"navbar-brand thick\">\n        <b>Log Down</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\"\n         routerLink=\"/login\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div align=\"center\">\n    <h3>Search Nutrionix API for Caloric Content of Food Item</h3>\n    <input [(ngModel)]=\"fooditem\"\n           placeholder=\"pizza\"\n           class=\"form-control form-custom\"/>\n\n    <button (click)=\"searchFood(fooditem)\"\n            class=\"btn btn-primary btn-block btn-custom\">\n      Search\n    </button>\n\n    <ul class=\"list-group\">\n      <li class=\"list-group-item list-custom\"\n          *ngFor=\"let food of result\">\n        <h4>{{food.fields.item_name}}\n          <a (click)=\"fetchFood(food)\">\n          <span class=\"glyphicon\n          glyphicon-plus-sign pull-right\"></span>\n          </a>\n        </h4>\n        Calories : {{food.fields.nf_calories}} <br>\n        Serving Size: {{food.fields.nf_serving_size_qty}}\n      </li>\n    </ul>\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a href=\"\"\n         class=\"navbar-brand thick\">\n        <b>Log Down</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\"\n         routerLink=\"/login\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div align=\"center\">\n    <h3>Search Nutrionix API for Caloric Content of Food Item</h3>\n    <input [(ngModel)]=\"fooditem\"\n           placeholder=\"pizza\"\n           class=\"form-control form-custom\"/>\n\n    <a (click)=\"searchFood(fooditem)\"\n            class=\"btn btn-primary btn-block btn-custom\">\n      Search\n    </a>\n\n    <ul class=\"list-group\">\n      <div *ngIf=\"errorFlag\"\n           class=\"alert\">\n        <b>\n          <h3>Additional Information</h3><br>\n          <b>Brand Name: {{brand_name}}</b><br>\n          <b>Product Name: {{add_name}}</b><br>\n          <b>Calorie Content: {{add_calories}}</b><br>\n          <b>Serving Size Quantity: {{add_servingsize}}</b><br>\n          <b>Serving Size Unit: {{servingunit}}</b><br>\n          <b>Fat Content: {{fat}}</b>\n        </b>\n      </div>\n      <li class=\"list-group-item list-custom\"\n          *ngFor=\"let food of result\">\n        <h4>\n          <a (click)=\"displayContent(food)\">\n            {{food.fields.item_name}}\n          </a>\n\n          <a (click)=\"fetchFood(food)\">\n          <span class=\"glyphicon\n          glyphicon-plus-sign pull-right\"></span>\n          </a>\n        </h4>\n        Calories : {{food.fields.nf_calories}} <br>\n        Serving Size: {{food.fields.nf_serving_size_qty}}\n      </li>\n    </ul>\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -455,6 +453,15 @@ var FooditemNewComponent = (function () {
             .subscribe(function (result) {
             _this.result = result.hits;
         });
+    };
+    FooditemNewComponent.prototype.displayContent = function (food) {
+        this.add_name = food.fields.item_name;
+        this.add_calories = food.fields.nf_calories;
+        this.add_servingsize = food.fields.nf_serving_size_qty;
+        this.brand_name = food.fields.brand_name;
+        this.servingunit = food.fields.nf_serving_size_unit;
+        this.fat = food.fields.nf_total_fat;
+        this.errorFlag = true;
     };
     FooditemNewComponent.prototype.fetchFood = function (food) {
         var _this = this;
@@ -1285,8 +1292,17 @@ var FooditemService = (function () {
             'findItemById': this.findItemById,
             'deleteItem': this.deleteItem,
             'findItemByLogIdEvent': this.findItemByLogIdEvent,
+            'clientItem': this.clientItem,
+            'findClientItem': this.findClientItem
         };
     }
+    FooditemService.prototype.clientItem = function (item) {
+        this.client_items.push(item);
+        return item;
+    };
+    FooditemService.prototype.findClientItem = function () {
+        return this.client_items[0];
+    };
     FooditemService.prototype.createFooditem = function (userId, logId, fooditem) {
         var url = this.domain_url + '/api/user/' + userId + '/foodlog/' + logId + '/item';
         return this.http.post(url, fooditem)

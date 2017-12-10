@@ -34,6 +34,7 @@ export class FooditemListComponent implements OnInit {
       .subscribe((fooditems) => {
         this.fooditems = fooditems;
         this.router.navigate(['profile', this.userId, 'foodlog']);
+        // this.router.navigate(['profile', this.userId, 'foodlog', this.logId, 'item'])
       });
   }
 

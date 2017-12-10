@@ -33,15 +33,31 @@
            placeholder="pizza"
            class="form-control form-custom"/>
 
-    <button (click)="searchFood(fooditem)"
+    <a (click)="searchFood(fooditem)"
             class="btn btn-primary btn-block btn-custom">
       Search
-    </button>
+    </a>
 
     <ul class="list-group">
+      <div *ngIf="errorFlag"
+           class="alert">
+        <b>
+          <h3>Additional Information</h3><br>
+          <b>Brand Name: {{brand_name}}</b><br>
+          <b>Product Name: {{add_name}}</b><br>
+          <b>Calorie Content: {{add_calories}}</b><br>
+          <b>Serving Size Quantity: {{add_servingsize}}</b><br>
+          <b>Serving Size Unit: {{servingunit}}</b><br>
+          <b>Fat Content: {{fat}}</b>
+        </b>
+      </div>
       <li class="list-group-item list-custom"
           *ngFor="let food of result">
-        <h4>{{food.fields.item_name}}
+        <h4>
+          <a (click)="displayContent(food)">
+            {{food.fields.item_name}}
+          </a>
+
           <a (click)="fetchFood(food)">
           <span class="glyphicon
           glyphicon-plus-sign pull-right"></span>

@@ -14,11 +14,20 @@ export class FooditemNewComponent implements OnInit {
   logId: String;
   userId: String;
   fooditem: String;
-  result: Object;
   name: String;
   calories: String;
   servingsize: String;
+  result: Object;
   event: String;
+  errorFlag: Boolean;
+
+  // additional information
+  add_name: String;
+  add_calories: String;
+  add_servingsize: String;
+  brand_name: String;
+  servingunit: String;
+  fat: String;
 
   constructor(private nutrionixService: NutrionixAPIService,
               private activatedRoute: ActivatedRoute,
@@ -30,6 +39,16 @@ export class FooditemNewComponent implements OnInit {
       .subscribe((result) => {
         this.result = result.hits;
       });
+  }
+
+  displayContent(food) {
+    this.add_name = food.fields.item_name;
+    this.add_calories = food.fields.nf_calories;
+    this.add_servingsize = food.fields.nf_serving_size_qty;
+    this.brand_name = food.fields.brand_name;
+    this.servingunit = food.fields.nf_serving_size_unit;
+    this.fat = food.fields.nf_total_fat;
+    this.errorFlag = true;
   }
 
   fetchFood(food) {

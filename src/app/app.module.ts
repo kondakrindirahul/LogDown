@@ -39,7 +39,7 @@ import { FooditemEditComponent } from './components/fooditem/fooditem-edit/foodi
     FoodlogNewComponent,
     FooditemListComponent,
     FooditemNewComponent,
-    FooditemEditComponent
+    FooditemEditComponent,
   ],
   imports: [
     BrowserModule,
