@@ -14,7 +14,7 @@ UserModel.deleteUser = deleteUser;
 module.exports = UserModel;
 
 function createUser(user) {
-  user.roles = ['ADMIN'];
+  user.roles = ['USER'];
   return UserModel.create(user);
 }
 
