@@ -1,3 +1,72 @@
-<p>
-  admin-edit-user works!
-</p>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!--adding the back glyphicon-->
+    <p class="navbar-text pull-left">
+      <a routerLink="/admin/user"
+         class="navbar-link">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+    </p>
+    <p class="navbar-header pull-left">
+      <a class="navbar-brand thick">
+        <b>Edit User</b>
+      </a>
+    </p>
+    <p class="navbar-text pull-right">
+      <a  class="navbar-link" (click)="userUpdate(userId)">
+        <span class="glyphicon glyphicon-ok">
+        </span>
+      </a>
+    </p>
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="form-group">
+    <label>User Name</label>
+    <input [(ngModel)]='user.username'
+           type="text"
+           class="form-control"
+           placeholder="Alice">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input [(ngModel)]='user.password'
+           type="password"
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Mail</label>
+    <input [(ngModel)]='user.mail'
+           type="text"
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <label>First Name</label>
+    <input [(ngModel)]='user.firstName'
+           type="text"
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input [(ngModel)]='user.lastName'
+           type="text"
+           class="form-control">
+  </div>
+
+  <a class="btn btn-danger btn-block"
+     (click)="userDelete(user)">
+    Delete
+  </a>
+
+</div>
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+    </p>
+
+  </div>
+</nav>

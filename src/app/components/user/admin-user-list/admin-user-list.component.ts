@@ -19,7 +19,6 @@ export class AdminUserListComponent implements OnInit {
       .subscribe((users: User[]) => {
         this.users = users;
       });
-
   }
 
 }

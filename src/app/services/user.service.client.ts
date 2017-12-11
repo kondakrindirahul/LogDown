@@ -28,7 +28,9 @@ export class UserService {
     'findUserByCredentials' : this.findUserByCredentials,
     'findUserById' : this.findUserById,
     'findUserByUsername' : this.findUserByUsername,
-    'updateUser' : this.updateUser
+    'findAllUsers' : this.findAllUsers,
+    'updateUser' : this.updateUser,
+    'deleteUser' : this.deleteUser
   };
 
   register(username, password) {
@@ -114,7 +116,7 @@ export class UserService {
   }
 
   findUserById(userId) {
-    var url = this.domain_url + '/api/user/' + userId;
+    const url = this.domain_url + '/api/user/' + userId;
     return this.http.get(url)
       .map((response: Response) => {
         return response.json();
@@ -140,6 +142,14 @@ export class UserService {
   updateUser(userId, updateduser) {
     const url = this.domain_url + '/api/user/' + userId;
     return this.http.put(url, updateduser)
+      .map((response: Response) => {
+        return response.json();
+      });
+  }
+
+  deleteUser(user) {
+    const url = this.domain_url + '/api/user/' + user._id;
+    return this.http.delete(url, user)
       .map((response: Response) => {
         return response.json();
       });

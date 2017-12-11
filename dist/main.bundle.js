@@ -225,8 +225,8 @@ var APP_ROUTES = [
     { path: 'test', component: __WEBPACK_IMPORTED_MODULE_2__components_test_test_component__["a" /* TestComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_3__components_user_login_login_component__["a" /* LoginComponent */] },
     { path: 'admin/user', component: __WEBPACK_IMPORTED_MODULE_11__components_user_admin_user_list_admin_user_list_component__["a" /* AdminUserListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__services_admin_service_client__["a" /* AdminServiceClient */]] },
-    { path: 'admin/user/new', component: __WEBPACK_IMPORTED_MODULE_12__components_user_admin_create_user_admin_create_user_component__["a" /* AdminCreateUserComponent */], pathMatch: 'full' },
-    { path: 'admin/user/:userId', component: __WEBPACK_IMPORTED_MODULE_13__components_user_admin_edit_user_admin_edit_user_component__["a" /* AdminEditUserComponent */], pathMatch: 'full' },
+    { path: 'admin/user/new', component: __WEBPACK_IMPORTED_MODULE_12__components_user_admin_create_user_admin_create_user_component__["a" /* AdminCreateUserComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__services_admin_service_client__["a" /* AdminServiceClient */]], pathMatch: 'full' },
+    { path: 'admin/user/:userId', component: __WEBPACK_IMPORTED_MODULE_13__components_user_admin_edit_user_admin_edit_user_component__["a" /* AdminEditUserComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__services_admin_service_client__["a" /* AdminServiceClient */]], pathMatch: 'full' },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_4__components_user_register_register_component__["a" /* RegisterComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_5__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_authentication_service_client__["a" /* AuthenticationService */]] },
     { path: 'profile/:userId', component: __WEBPACK_IMPORTED_MODULE_5__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_authentication_service_client__["a" /* AuthenticationService */]] },
@@ -1141,7 +1141,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/admin-create-user/admin-create-user.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>New User</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"newUser()\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div class=\"form-group\">\n    <label>User Name</label>\n    <input [(ngModel)]='name'\n           type=\"text\"\n           class=\"form-control form-custom\"\n           placeholder=\"Alice\">\n  </div>\n  <div class=\"form-group form-custom\">\n    <label>Password</label>\n    <input [(ngModel)]='password'\n           type=\"text\"\n           class=\"form-control\">\n  </div>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>New User</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"newUser()\" class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div class=\"form-group\">\n    <label>User Name</label>\n    <input [(ngModel)]='name'\n           type=\"text\"\n           class=\"form-control\"\n           placeholder=\"Alice\">\n  </div>\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input [(ngModel)]='password'\n           type=\"password\"\n           class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Mail</label>\n    <input [(ngModel)]='mail'\n           type=\"text\"\n           class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>First Name</label>\n    <input [(ngModel)]='firstname'\n           type=\"text\"\n           class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Last Name</label>\n    <input [(ngModel)]='lastname'\n           type=\"text\"\n           class=\"form-control\">\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1154,6 +1154,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_user_model_client__ = __webpack_require__("../../../../../src/app/models/user.model.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1167,45 +1168,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var AdminCreateUserComponent = (function () {
-    function AdminCreateUserComponent(userService, router) {
+    function AdminCreateUserComponent(userService, router, activatedRoute) {
         this.userService = userService;
         this.router = router;
+        this.activatedRoute = activatedRoute;
     }
-    // foodlognew() {
-    //   if (this.name) {
-    //     const foodlog: FoodLog = new FoodLog('', this.name, this.userId, this.date);
-    //     this.foodlogService.createFoodlog(this.userId, foodlog)
-    //       .subscribe((foodlogs) => {
-    //         this.router.navigate(['profile', this.userId, 'foodlog']);
-    //       });
-    //   } else {
-    //     this.errorFlag = true;
-    //   }
-    //
-    // }
     AdminCreateUserComponent.prototype.newUser = function () {
         var _this = this;
-        var new_user = new __WEBPACK_IMPORTED_MODULE_3__models_user_model_client__["a" /* User */]('', this.name, this.password, '', '', '');
+        var new_user = new __WEBPACK_IMPORTED_MODULE_3__models_user_model_client__["a" /* User */]('', this.name, this.password, this.mail, this.firstname, this.lastname);
         this.userService.createUser(new_user)
             .subscribe(function (users) {
-            _this.router.navigate(['/admin', 'user']);
+            _this.router.navigate(['admin', 'user']);
         });
     };
     AdminCreateUserComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userService.findAllUsers().
+            subscribe(function (users) {
+            _this.users = users;
+        });
     };
     return AdminCreateUserComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('f'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* NgForm */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* NgForm */]) === "function" && _a || Object)
+], AdminCreateUserComponent.prototype, "usernewform", void 0);
 AdminCreateUserComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-admin-create-user',
         template: __webpack_require__("../../../../../src/app/components/user/admin-create-user/admin-create-user.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user/admin-create-user/admin-create-user.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object])
 ], AdminCreateUserComponent);
 
-var _a, _b;
+var _a, _b, _c, _d;
 //# sourceMappingURL=admin-create-user.component.js.map
 
 /***/ }),
@@ -1231,7 +1232,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/admin-edit-user/admin-edit-user.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  admin-edit-user works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/admin/user\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>Edit User</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a  class=\"navbar-link\" (click)=\"userUpdate(userId)\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div class=\"form-group\">\n    <label>User Name</label>\n    <input [(ngModel)]='user.username'\n           type=\"text\"\n           class=\"form-control\"\n           placeholder=\"Alice\">\n  </div>\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input [(ngModel)]='user.password'\n           type=\"password\"\n           class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Mail</label>\n    <input [(ngModel)]='user.mail'\n           type=\"text\"\n           class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>First Name</label>\n    <input [(ngModel)]='user.firstName'\n           type=\"text\"\n           class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Last Name</label>\n    <input [(ngModel)]='user.lastName'\n           type=\"text\"\n           class=\"form-control\">\n  </div>\n\n  <a class=\"btn btn-danger btn-block\"\n     (click)=\"userDelete(user)\">\n    Delete\n  </a>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1241,6 +1242,8 @@ module.exports = "<p>\n  admin-edit-user works!\n</p>\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminEditUserComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1251,10 +1254,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var AdminEditUserComponent = (function () {
-    function AdminEditUserComponent() {
+    function AdminEditUserComponent(userService, router, activatedRoute) {
+        this.userService = userService;
+        this.router = router;
+        this.activatedRoute = activatedRoute;
     }
+    AdminEditUserComponent.prototype.userUpdate = function (userId) {
+        var _this = this;
+        var updateduser = this.user;
+        this.userService
+            .updateUser(userId, updateduser)
+            .subscribe(function (users) {
+            _this.users = users;
+            _this.router.navigate(['admin', 'user']);
+        });
+    };
+    AdminEditUserComponent.prototype.userDelete = function (user) {
+        var _this = this;
+        this.userService.deleteUser(user)
+            .subscribe(function (users) {
+            _this.users = users;
+            _this.router.navigate(['admin', 'user']);
+        });
+    };
     AdminEditUserComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params
+            .subscribe(function (params) {
+            _this.userId = params['userId'];
+            _this.userService
+                .findUserById(_this.userId)
+                .subscribe(function (user) {
+                _this.user = user;
+            });
+        });
     };
     return AdminEditUserComponent;
 }());
@@ -1264,9 +1301,10 @@ AdminEditUserComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/user/admin-edit-user/admin-edit-user.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user/admin-edit-user/admin-edit-user.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _c || Object])
 ], AdminEditUserComponent);
 
+var _a, _b, _c;
 //# sourceMappingURL=admin-edit-user.component.js.map
 
 /***/ }),
@@ -1292,7 +1330,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/admin-user-list/admin-user-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>User List</b>\n      </a>\n    </p>\n\n    <!--add mark-->\n    <p class=\"navbar-text pull-right\">\n      <a class=\"navbar-link\"\n         routerLink=\"/admin/user/new\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <h1>User List</h1>\n\n  <ul class=\"list-group\">\n    <li *ngFor=\"let user of users\"\n        class=\"list-group-item list-custom\">\n      <a routerLink=\"/admin/user/{{user._id}}\">\n        {{user.username}}\n      </a>\n    </li>\n  </ul>\n\n</div>\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a >\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>User List</b>\n      </a>\n    </p>\n\n    <!--add mark-->\n    <p class=\"navbar-text pull-right\">\n      <a class=\"navbar-link\"\n         routerLink=\"/admin/user/new\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <h1>User List</h1>\n\n  <ul class=\"list-group\">\n    <li *ngFor=\"let user of users\"\n        class=\"list-group-item list-custom\">\n      <a routerLink=\"/admin/user/{{user._id}}\">\n        {{user.username}}\n      </a>\n    </li>\n  </ul>\n\n</div>\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -2089,7 +2127,9 @@ var UserService = (function () {
             'findUserByCredentials': this.findUserByCredentials,
             'findUserById': this.findUserById,
             'findUserByUsername': this.findUserByUsername,
-            'updateUser': this.updateUser
+            'findAllUsers': this.findAllUsers,
+            'updateUser': this.updateUser,
+            'deleteUser': this.deleteUser
         };
     }
     UserService.prototype.register = function (username, password) {
@@ -2197,6 +2237,13 @@ var UserService = (function () {
     UserService.prototype.updateUser = function (userId, updateduser) {
         var url = this.domain_url + '/api/user/' + userId;
         return this.http.put(url, updateduser)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    UserService.prototype.deleteUser = function (user) {
+        var url = this.domain_url + '/api/user/' + user._id;
+        return this.http.delete(url, user)
             .map(function (response) {
             return response.json();
         });

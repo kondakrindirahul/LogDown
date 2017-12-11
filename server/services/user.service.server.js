@@ -75,6 +75,7 @@ module.exports = function (app) {
   app.get('/api/user', findUsers);
   app.get('/api/user/:userId', findUserById);
   app.put('/api/user/:userId', updateUser);
+  app.delete('/api/user/:userId', deleteUser);
 
   app.post('/api/register', register);
   app.post('/api/login',
@@ -121,7 +122,8 @@ module.exports = function (app) {
   }
 
   function checkIsAdmin(req, res, next) {
-    if(req.isAuthenticated() && req.user.roles.indexOf('ADMIN') > -1) {
+    if(req.isAuthenticated()
+      && req.user.roles.indexOf('ADMIN') > -1) {
       next();
     } else {
       res.send(401);
@@ -211,6 +213,14 @@ module.exports = function (app) {
     userModel.updateUser(userId, newUser)
       .then(function (users) {
         res.json(users);
+      });
+  }
+
+  function deleteUser(req, res) {
+    const userId = req.params['userId'];
+    userModel.deleteUser(userId)
+      .then(function (user) {
+        res.json(user);
       });
   }
 

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from "../../../services/user.service.client";
 import { Router } from "@angular/router";
 import { User } from "../../../models/user.model.client";
+import { ActivatedRoute } from "@angular/router";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: 'app-admin-create-user',
@@ -10,34 +12,33 @@ import { User } from "../../../models/user.model.client";
 })
 export class AdminCreateUserComponent implements OnInit {
 
+  @ViewChild('f') usernewform: NgForm;
+
   name: String;
   password: String;
+  mail: String;
+  firstname: String;
+  lastname: String;
+  users: User;
 
   constructor(private userService: UserService,
-              private router: Router) { }
+              private router: Router,
+              private activatedRoute: ActivatedRoute) { }
 
-  // foodlognew() {
-  //   if (this.name) {
-  //     const foodlog: FoodLog = new FoodLog('', this.name, this.userId, this.date);
-  //     this.foodlogService.createFoodlog(this.userId, foodlog)
-  //       .subscribe((foodlogs) => {
-  //         this.router.navigate(['profile', this.userId, 'foodlog']);
-  //       });
-  //   } else {
-  //     this.errorFlag = true;
-  //   }
-  //
-  // }
 
   newUser() {
-    const new_user: User = new User('', this.name, this.password, '', '', '');
+    const new_user: User = new User('', this.name, this.password, this.mail, this.firstname, this.lastname);
     this.userService.createUser(new_user)
       .subscribe((users) => {
-        this.router.navigate(['/admin', 'user']);
+        this.router.navigate(['admin', 'user']);
       });
   }
 
   ngOnInit() {
+    this.userService.findAllUsers().
+      subscribe((users) => {
+        this.users = users;
+    });
   }
 
 }
