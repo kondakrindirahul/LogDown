@@ -12,6 +12,19 @@
         <b>Edit</b>
       </a>
     </p>
+    <!--logout-->
+    <p class="navbar-text pull-right">
+      <a (click)="logOut()"
+         class="navbar-link">
+        <span class="glyphicon glyphicon-log-out"></span>
+      </a>
+    </p>
+    <!--Logged In User Name-->
+    <p class="navbar-header pull-right">
+      <a class="navbar-brand thick">
+        <b>{{user.username}}</b>
+      </a>
+    </p>
     <p class="navbar-text pull-right">
       <a (click)="updateFoodlog(logId)"
          class="navbar-link">
@@ -53,7 +66,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container-fluid">
     <p class="navbar-text pull-right">
-      <a routerLink="/profile/{{userId}}">
+      <a routerLink="/profile">
         <span class="glyphicon glyphicon-user"></span>
       </a>
     </p>

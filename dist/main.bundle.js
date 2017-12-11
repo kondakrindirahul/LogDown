@@ -324,7 +324,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/fooditem/fooditem-list/fooditem-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a href=\"\"\n         class=\"navbar-brand thick\">\n        <b>Log Down</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\"\n         routerLink=\"/login\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div>\n    <h2 align=\"center\">{{foodlog.name}}</h2>\n\n    <div align=\"\">\n      <h3>Breakfast\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/breakfast\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <ul class=\"list-group\">\n        <li class=\"list-group-item list-custom\"\n            *ngFor=\"let food of breakfast\">\n          <p> <b>{{food.name}}</b>\n            <span class=\"glyphicon glyphicon-fire\">\n            </span>\n            Calories : {{food.calories}}</p>\n          <a (click)=\"deleteItem(food._id)\">\n            <span class=\"glyphicon glyphicon-remove-sign pull-right\">\n            </span>\n          </a>\n          <br>\n          <p>Serving Size: {{food.servingsize}} </p>\n        </li>\n      </ul>\n    </div>\n\n\n    <div align=\"\">\n      <h3>Lunch\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/lunch\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <li class=\"list-group-item list-custom\"\n          *ngFor=\"let food of lunch\">\n        <p> <b>{{food.name}}</b>\n          <span class=\"glyphicon glyphicon-fire\">\n            </span>\n          Calories : {{food.calories}}</p>\n        <a (click)=\"deleteItem(food._id)\">\n            <span class=\"glyphicon glyphicon-remove-sign pull-right\">\n            </span>\n        </a>\n        <br>\n        <p>Serving Size: {{food.servingsize}} </p>\n      </li>\n    </div>\n\n    <div align=\"\">\n      <h3>Dinner\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/dinner\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <ul class=\"list-group\">\n\n        <li class=\"list-group-item list-custom\"\n            *ngFor=\"let food of dinner\">\n          <p> <b>{{food.name}}</b>\n            <span class=\"glyphicon glyphicon-fire\">\n            </span>\n            Calories : {{food.calories}}</p>\n          <a (click)=\"deleteItem(food._id)\">\n            <span class=\"glyphicon glyphicon-remove-sign pull-right\">\n            </span>\n          </a>\n          <br>\n          <p>Serving Size: {{food.servingsize}} </p>\n        </li>\n      </ul>\n    </div>\n\n    <div align=\"\">\n      <h3>Snacks\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/snacks\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <ul class=\"list-group\">\n\n        <li class=\"list-group-item list-custom\"\n            *ngFor=\"let food of snacks\">\n          <p> <b>{{food.name}}</b>\n            <span class=\"glyphicon glyphicon-fire\">\n            </span>\n            Calories : {{food.calories}}</p>\n          <a (click)=\"deleteItem(food._id)\">\n            <span class=\"glyphicon glyphicon-remove-sign pull-right\">\n            </span>\n          </a>\n          <br>\n          <p>Serving Size: {{food.servingsize}} </p>\n        </li>\n      </ul>\n    </div>\n\n  </div>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a href=\"\"\n         class=\"navbar-brand thick\">\n        <b>Log Down</b>\n      </a>\n    </p>\n\n    <!--logout-->\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"logOut()\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-log-out\"></span>\n      </a>\n    </p>\n    <!--Logged In User Name-->\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\">\n        <b>{{user.username}}</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div>\n    <h2 align=\"center\">{{foodlog.name}}</h2>\n\n    <div align=\"\">\n      <h3>Breakfast\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/breakfast\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <ul class=\"list-group\">\n        <li class=\"list-group-item list-custom\"\n            *ngFor=\"let food of breakfast\">\n          <p> <b>{{food.name}}</b>\n            <span class=\"glyphicon glyphicon-fire\">\n            </span>\n            Calories : {{food.calories}}</p>\n          <a (click)=\"deleteItem(food._id)\">\n            <span class=\"glyphicon glyphicon-remove-sign pull-right\">\n            </span>\n          </a>\n          <br>\n          <p>Serving Size: {{food.servingsize}} </p>\n        </li>\n      </ul>\n    </div>\n\n\n    <div align=\"\">\n      <h3>Lunch\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/lunch\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <li class=\"list-group-item list-custom\"\n          *ngFor=\"let food of lunch\">\n        <p> <b>{{food.name}}</b>\n          <span class=\"glyphicon glyphicon-fire\">\n            </span>\n          Calories : {{food.calories}}</p>\n        <a (click)=\"deleteItem(food._id)\">\n            <span class=\"glyphicon glyphicon-remove-sign pull-right\">\n            </span>\n        </a>\n        <br>\n        <p>Serving Size: {{food.servingsize}} </p>\n      </li>\n    </div>\n\n    <div align=\"\">\n      <h3>Dinner\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/dinner\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <ul class=\"list-group\">\n\n        <li class=\"list-group-item list-custom\"\n            *ngFor=\"let food of dinner\">\n          <p> <b>{{food.name}}</b>\n            <span class=\"glyphicon glyphicon-fire\">\n            </span>\n            Calories : {{food.calories}}</p>\n          <a (click)=\"deleteItem(food._id)\">\n            <span class=\"glyphicon glyphicon-remove-sign pull-right\">\n            </span>\n          </a>\n          <br>\n          <p>Serving Size: {{food.servingsize}} </p>\n        </li>\n      </ul>\n    </div>\n\n    <div align=\"\">\n      <h3>Snacks\n        <a routerLink=\"/profile/{{userId}}/foodlog/{{logId}}/item/snacks\">\n                <span class=\"glyphicon\n                glyphicon-plus-sign\n                pull-right\"></span>\n        </a>\n      </h3>\n\n      <ul class=\"list-group\">\n\n        <li class=\"list-group-item list-custom\"\n            *ngFor=\"let food of snacks\">\n          <p> <b>{{food.name}}</b>\n            <span class=\"glyphicon glyphicon-fire\">\n            </span>\n            Calories : {{food.calories}}</p>\n          <a (click)=\"deleteItem(food._id)\">\n            <span class=\"glyphicon glyphicon-remove-sign pull-right\">\n            </span>\n          </a>\n          <br>\n          <p>Serving Size: {{food.servingsize}} </p>\n        </li>\n      </ul>\n    </div>\n\n  </div>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -337,6 +337,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_fooditem_service_client__ = __webpack_require__("../../../../../src/app/services/fooditem.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_foodlog_service_client__ = __webpack_require__("../../../../../src/app/services/foodlog.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -351,13 +352,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FooditemListComponent = (function () {
-    function FooditemListComponent(fooditemService, activatedRoute, foodlogService, router) {
+    function FooditemListComponent(fooditemService, activatedRoute, foodlogService, router, userService) {
         this.fooditemService = fooditemService;
         this.activatedRoute = activatedRoute;
         this.foodlogService = foodlogService;
         this.router = router;
+        this.userService = userService;
     }
+    FooditemListComponent.prototype.logOut = function () {
+        var _this = this;
+        this.userService.logout()
+            .subscribe(function (status) {
+            _this.router.navigate(['/login']);
+        });
+    };
     FooditemListComponent.prototype.deleteItem = function (itemId) {
         var _this = this;
         this.fooditemService.deleteItem(this.userId, this.logId, itemId)
@@ -407,6 +417,11 @@ var FooditemListComponent = (function () {
                 .subscribe(function (foodlog) {
                 _this.foodlog = foodlog;
             });
+            _this.userService
+                .findUserById(_this.userId)
+                .subscribe(function (user) {
+                _this.user = user;
+            });
         });
     };
     return FooditemListComponent;
@@ -417,10 +432,10 @@ FooditemListComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/fooditem/fooditem-list/fooditem-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/fooditem/fooditem-list/fooditem-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_fooditem_service_client__["a" /* FooditemService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_fooditem_service_client__["a" /* FooditemService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_foodlog_service_client__["a" /* FoodlogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_foodlog_service_client__["a" /* FoodlogService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_fooditem_service_client__["a" /* FooditemService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_fooditem_service_client__["a" /* FooditemService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_foodlog_service_client__["a" /* FoodlogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_foodlog_service_client__["a" /* FoodlogService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */]) === "function" && _e || Object])
 ], FooditemListComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=fooditem-list.component.js.map
 
 /***/ }),
@@ -446,7 +461,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/fooditem/fooditem-new/fooditem-new.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a href=\"\"\n         class=\"navbar-brand thick\">\n        <b>Log Down</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\"\n         routerLink=\"/login\">\n        <b>Login</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-header pull-right\">\n      <a routerLink=\"/register\"\n         class=\"navbar-brand thick\">\n        <b>Register</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div align=\"center\">\n    <h3>Search Nutrionix API for Caloric Content of Food Item</h3>\n    <input [(ngModel)]=\"fooditem\"\n           placeholder=\"pizza\"\n           class=\"form-control form-custom\"/>\n\n    <a (click)=\"searchFood(fooditem)\"\n            class=\"btn btn-primary btn-block btn-custom\">\n      Search\n    </a>\n\n    <div *ngIf=\"errorFlag2\"\n         class=\"alert alert-danger\">\n      <b>\"Enter a food item to view details\"</b>\n    </div>\n\n    <ul class=\"list-group\">\n      <div *ngIf=\"errorFlag\"\n           class=\"alert\">\n        <b>\n          <h3>Additional Information</h3><br>\n          <b>Brand Name: {{brand_name}}</b><br>\n          <b>Product Name: {{add_name}}</b><br>\n          <b>Sugar Content: {{sugar}}</b><br>\n          <b>Dietary Fibers: {{fiber}}</b><br>\n          <b>Protein Content: {{protein}}</b><br>\n          <b>Sodium Content: {{sodium}}</b><br>\n          <b>Fat Content: {{fat}}</b><br>\n        </b>\n      </div>\n      <li class=\"list-group-item list-custom\"\n          *ngFor=\"let food of result\">\n        <h4>\n          <a (click)=\"displayContent(food)\">\n            {{food.fields.item_name}}\n          </a>\n\n          <a (click)=\"fetchFood(food)\">\n          <span class=\"glyphicon\n          glyphicon-plus-sign pull-right\"></span>\n          </a>\n        </h4>\n        Calories : {{food.fields.nf_calories}} <br>\n        Serving Size: {{food.fields.nf_serving_size_qty}}\n      </li>\n    </ul>\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a href=\"\"\n         class=\"navbar-brand thick\">\n        <b>LogDown</b>\n      </a>\n    </p>\n\n    <!--logout-->\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"logOut()\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-log-out\"></span>\n      </a>\n    </p>\n    <!--Logged In User Name-->\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\">\n        <b>{{user.username}}</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div align=\"center\">\n    <h3>Search Nutrionix API for Caloric Content of Food Item</h3>\n    <input [(ngModel)]=\"fooditem\"\n           placeholder=\"pizza\"\n           class=\"form-control form-custom\"/>\n\n    <a (click)=\"searchFood(fooditem)\"\n            class=\"btn btn-primary btn-block btn-custom\">\n      Search\n    </a>\n\n    <div *ngIf=\"errorFlag2\"\n         class=\"alert alert-danger\">\n      <b>\"Enter a food item to view details\"</b>\n    </div>\n\n    <ul class=\"list-group\">\n      <div *ngIf=\"errorFlag\"\n           class=\"alert\">\n        <b>\n          <h3>Additional Information</h3><br>\n          <b>Brand Name: {{brand_name}}</b><br>\n          <b>Product Name: {{add_name}}</b><br>\n          <b>Sugar Content: {{sugar}}</b><br>\n          <b>Dietary Fibers: {{fiber}}</b><br>\n          <b>Protein Content: {{protein}}</b><br>\n          <b>Sodium Content: {{sodium}}</b><br>\n          <b>Fat Content: {{fat}}</b><br>\n        </b>\n      </div>\n      <li class=\"list-group-item list-custom\"\n          *ngFor=\"let food of result\">\n        <h4>\n          <a (click)=\"displayContent(food)\">\n            {{food.fields.item_name}}\n          </a>\n\n          <a (click)=\"fetchFood(food)\">\n          <span class=\"glyphicon\n          glyphicon-plus-sign pull-right\"></span>\n          </a>\n        </h4>\n        Calories : {{food.fields.nf_calories}} <br>\n        Serving Size: {{food.fields.nf_serving_size_qty}}\n      </li>\n    </ul>\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -459,6 +474,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_nutrionixAPI_service_client__ = __webpack_require__("../../../../../src/app/services/nutrionixAPI.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_fooditem_service_client__ = __webpack_require__("../../../../../src/app/services/fooditem.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -472,13 +488,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FooditemNewComponent = (function () {
-    function FooditemNewComponent(nutrionixService, activatedRoute, fooditemService, router) {
+    function FooditemNewComponent(nutrionixService, activatedRoute, fooditemService, router, userService) {
         this.nutrionixService = nutrionixService;
         this.activatedRoute = activatedRoute;
         this.fooditemService = fooditemService;
         this.router = router;
+        this.userService = userService;
     }
+    FooditemNewComponent.prototype.logOut = function () {
+        var _this = this;
+        this.userService.logout()
+            .subscribe(function (status) {
+            _this.router.navigate(['/login']);
+        });
+    };
     FooditemNewComponent.prototype.searchFood = function (fooditem) {
         var _this = this;
         if (fooditem) {
@@ -569,6 +594,11 @@ var FooditemNewComponent = (function () {
             _this.userId = params['userId'];
             _this.logId = params['logId'];
             _this.event = params['time'];
+            _this.userService
+                .findUserById(_this.userId)
+                .subscribe(function (user) {
+                _this.user = user;
+            });
         });
     };
     return FooditemNewComponent;
@@ -579,10 +609,10 @@ FooditemNewComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/fooditem/fooditem-new/fooditem-new.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/fooditem/fooditem-new/fooditem-new.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_nutrionixAPI_service_client__["a" /* NutrionixAPIService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_nutrionixAPI_service_client__["a" /* NutrionixAPIService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_fooditem_service_client__["a" /* FooditemService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_fooditem_service_client__["a" /* FooditemService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_nutrionixAPI_service_client__["a" /* NutrionixAPIService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_nutrionixAPI_service_client__["a" /* NutrionixAPIService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_fooditem_service_client__["a" /* FooditemService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_fooditem_service_client__["a" /* FooditemService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */]) === "function" && _e || Object])
 ], FooditemNewComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=fooditem-new.component.js.map
 
 /***/ }),
@@ -608,7 +638,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/foodlog/foodlog-edit/foodlog-edit.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>Edit</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"updateFoodlog(logId)\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div>\n    <div *ngIf=\"errorFlag\"\n         class=\"alert alert-danger\">\n      <b>\"Enter a Name to Edit the Log!!\"</b>\n    </div>\n  <label>Log Name</label>\n  <input [(ngModel)]=\"foodlog.name\"\n         class=\"form-control\"\n         value=\"{{foodlog.name}}\"/>\n\n  <label>Date</label>\n  <input [(ngModel)]=\"foodlog.dateCreated\"\n         class=\"form-control\"\n         type=\"date\"\n         value=\"{{foodlog.dateCreated}}\"/>\n\n  <a class=\"btn btn-danger btn-block\"\n     (click)=\"deleteFoodlog()\">\n    Delete\n  </a>\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>Edit</b>\n      </a>\n    </p>\n    <!--logout-->\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"logOut()\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-log-out\"></span>\n      </a>\n    </p>\n    <!--Logged In User Name-->\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\">\n        <b>{{user.username}}</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"updateFoodlog(logId)\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div>\n    <div *ngIf=\"errorFlag\"\n         class=\"alert alert-danger\">\n      <b>\"Enter a Name to Edit the Log!!\"</b>\n    </div>\n  <label>Log Name</label>\n  <input [(ngModel)]=\"foodlog.name\"\n         class=\"form-control\"\n         value=\"{{foodlog.name}}\"/>\n\n  <label>Date</label>\n  <input [(ngModel)]=\"foodlog.dateCreated\"\n         class=\"form-control\"\n         type=\"date\"\n         value=\"{{foodlog.dateCreated}}\"/>\n\n  <a class=\"btn btn-danger btn-block\"\n     (click)=\"deleteFoodlog()\">\n    Delete\n  </a>\n  </div>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
 
 /***/ }),
 
@@ -620,6 +650,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__ = __webpack_require__("../../../../../src/app/services/foodlog.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -633,12 +664,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FoodlogEditComponent = (function () {
-    function FoodlogEditComponent(foodlogService, activatedRoute, router) {
+    function FoodlogEditComponent(foodlogService, activatedRoute, router, userService) {
         this.foodlogService = foodlogService;
         this.activatedRoute = activatedRoute;
         this.router = router;
+        this.userService = userService;
     }
+    FoodlogEditComponent.prototype.logOut = function () {
+        var _this = this;
+        this.userService.logout()
+            .subscribe(function (status) {
+            _this.router.navigate(['/login']);
+        });
+    };
     FoodlogEditComponent.prototype.updateFoodlog = function (logId) {
         var _this = this;
         this.foodlogService.findFoodLogById(this.userId, logId)
@@ -683,6 +723,11 @@ var FoodlogEditComponent = (function () {
                 .subscribe(function (foodlog) {
                 _this.foodlog = foodlog;
             });
+            _this.userService
+                .findUserById(_this.userId)
+                .subscribe(function (user) {
+                _this.user = user;
+            });
         });
     };
     return FoodlogEditComponent;
@@ -693,10 +738,10 @@ FoodlogEditComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/foodlog/foodlog-edit/foodlog-edit.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/foodlog/foodlog-edit/foodlog-edit.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */]) === "function" && _d || Object])
 ], FoodlogEditComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=foodlog-edit.component.js.map
 
 /***/ }),
@@ -722,7 +767,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/foodlog/foodlog-list/foodlog-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>FoodLogs</b>\n      </a>\n    </p>\n\n    <!--add mark-->\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}/foodlog/new\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item active\">\n      <div class=\"row\">\n        <div class=\"col-xs-9 col-sm-6\">\n          Foodlog Name\n        </div>\n        <div class=\"col-md-3 hidden-xs\">\n          Date\n        </div>\n      </div>\n    </li>\n\n    <div>\n      <li class=\"list-group-item\" *ngFor=\"let foodlog of foodlogs\">\n        <div class=\"row\">\n          <div class=\"col-xs-9 col-sm-6\">\n            <a routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}/item\">\n              {{foodlog.name}}\n            </a>\n          </div>\n          <div class=\"col-md-3 hidden-xs\">\n            <a routerLink=\"\">\n              {{foodlog.dateCreated}}\n            </a>\n          </div>\n          <div class=\"col-xs-3\">\n            <a class=\"pull-right\"\n               routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}\">\n              <span class=\"glyphicon glyphicon-cog\"></span>\n            </a>\n          </div>\n\n\n        </div>\n\n      </li>\n    </div>\n\n  </ul>\n\n  <button href=\"admin/user\" [hidden]=\"user.roles !== 'ADMIN'\">\n    Users\n  </button>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n\n    <!--heading on the nav bar-->\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>FoodLogs</b>\n      </a>\n    </p>\n\n    <!--add mark-->\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}/foodlog/new\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n\n    <!--logout-->\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"logOut()\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-log-out\"></span>\n      </a>\n    </p>\n\n    <!--Logged In User Name-->\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\">\n        <b>{{user.username}}</b>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item active\">\n      <div class=\"row\">\n        <div class=\"col-xs-9 col-sm-6\">\n          Foodlog Name\n        </div>\n        <div class=\"col-md-3 hidden-xs\">\n          Date\n        </div>\n      </div>\n    </li>\n\n    <div>\n      <li class=\"list-group-item\" *ngFor=\"let foodlog of foodlogs\">\n        <div class=\"row\">\n          <div class=\"col-xs-9 col-sm-6\">\n            <a routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}/item\">\n              {{foodlog.name}}\n            </a>\n          </div>\n          <div class=\"col-md-3 hidden-xs\">\n            <a routerLink=\"\">\n              {{foodlog.dateCreated}}\n            </a>\n          </div>\n          <div class=\"col-xs-3\">\n            <a class=\"pull-right\"\n               routerLink=\"/profile/{{userId}}/foodlog/{{foodlog._id}}\">\n              <span class=\"glyphicon glyphicon-cog\"></span>\n            </a>\n          </div>\n\n\n        </div>\n\n      </li>\n    </div>\n\n  </ul>\n\n  <button href=\"admin/user\" [hidden]=\"user.roles !== 'ADMIN'\">\n    Users\n  </button>\n\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -748,12 +793,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FoodlogListComponent = (function () {
-    function FoodlogListComponent(foodlogService, activatedRoute, userService) {
+    function FoodlogListComponent(foodlogService, activatedRoute, userService, router) {
         this.foodlogService = foodlogService;
         this.activatedRoute = activatedRoute;
         this.userService = userService;
+        this.router = router;
     }
+    FoodlogListComponent.prototype.logOut = function () {
+        var _this = this;
+        this.userService.logout()
+            .subscribe(function (status) {
+            _this.router.navigate(['/login']);
+        });
+    };
     FoodlogListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.activatedRoute.params
@@ -779,10 +833,10 @@ FoodlogListComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/foodlog/foodlog-list/foodlog-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/foodlog/foodlog-list/foodlog-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _d || Object])
 ], FoodlogListComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=foodlog-list.component.js.map
 
 /***/ }),
@@ -808,7 +862,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/foodlog/foodlog-new/foodlog-new.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>New Foodlog</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"foodlognew()\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div *ngIf=\"errorFlag\"\n       class=\"alert alert-danger\">\n    <b>Please enter a name for the foodlog!!</b>\n  </div>\n  <div class=\"form-group\">\n    <label>Log Name</label>\n    <input [(ngModel)]='name'\n           type=\"text\"\n           class=\"form-control\"\n           placeholder=\"entry on wednesday\">\n  </div>\n  <div class=\"form-group\">\n    <label>Date</label>\n    <input [(ngModel)]='date'\n           type=\"date\"\n           class=\"form-control\">\n  </div>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile/{{userId}}\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <!--adding the back glyphicon-->\n    <p class=\"navbar-text pull-left\">\n      <a routerLink=\"/profile/{{userId}}/foodlog\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-chevron-left\"></span>\n      </a>\n    </p>\n    <p class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <b>New Foodlog</b>\n      </a>\n    </p>\n    <!--logout-->\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"logOut()\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-log-out\"></span>\n      </a>\n    </p>\n    <!--Logged In User Name-->\n    <p class=\"navbar-header pull-right\">\n      <a class=\"navbar-brand thick\">\n        <b>{{user.username}}</b>\n      </a>\n    </p>\n    <p class=\"navbar-text pull-right\">\n      <a (click)=\"foodlognew()\"\n         class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-ok\">\n        </span>\n      </a>\n    </p>\n\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <div *ngIf=\"errorFlag\"\n       class=\"alert alert-danger\">\n    <b>Please enter a name for the foodlog!!</b>\n  </div>\n  <div class=\"form-group\">\n    <label>Log Name</label>\n    <input [(ngModel)]='name'\n           type=\"text\"\n           class=\"form-control\"\n           placeholder=\"entry on wednesday\">\n  </div>\n  <div class=\"form-group\">\n    <label>Date</label>\n    <input [(ngModel)]='date'\n           type=\"date\"\n           class=\"form-control\">\n  </div>\n</div>\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a routerLink=\"/profile\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -821,6 +875,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__ = __webpack_require__("../../../../../src/app/services/foodlog.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_foodlog_model_client__ = __webpack_require__("../../../../../src/app/models/foodlog.model.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -835,12 +890,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FoodlogNewComponent = (function () {
-    function FoodlogNewComponent(foodlogService, activatedRoute, router) {
+    function FoodlogNewComponent(foodlogService, activatedRoute, router, userService) {
         this.foodlogService = foodlogService;
         this.activatedRoute = activatedRoute;
         this.router = router;
+        this.userService = userService;
     }
+    FoodlogNewComponent.prototype.logOut = function () {
+        var _this = this;
+        this.userService.logout()
+            .subscribe(function (status) {
+            _this.router.navigate(['/login']);
+        });
+    };
     FoodlogNewComponent.prototype.foodlognew = function () {
         var _this = this;
         if (this.name) {
@@ -864,6 +928,11 @@ var FoodlogNewComponent = (function () {
                 .subscribe(function (foodlogs) {
                 _this.foodlogs = foodlogs;
             });
+            _this.userService
+                .findUserById(_this.userId)
+                .subscribe(function (user) {
+                _this.user = user;
+            });
         });
     };
     return FoodlogNewComponent;
@@ -874,10 +943,10 @@ FoodlogNewComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/foodlog/foodlog-new/foodlog-new.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/foodlog/foodlog-new/foodlog-new.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_foodlog_service_client__["a" /* FoodlogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */]) === "function" && _d || Object])
 ], FoodlogNewComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=foodlog-new.component.js.map
 
 /***/ }),

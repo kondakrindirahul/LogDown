@@ -5,6 +5,8 @@ import { ActivatedRoute } from "@angular/router";
 import { FoodLog } from "../../../models/foodlog.model.client";
 import { FoodlogService } from "../../../services/foodlog.service.client";
 import { Router } from "@angular/router";
+import { User } from "../../../models/user.model.client";
+import { UserService } from "../../../services/user.service.client";
 
 @Component({
   selector: 'app-fooditem-list',
@@ -16,6 +18,7 @@ export class FooditemListComponent implements OnInit {
   // declare var $: any;
 
   userId: String;
+  user: User
   foodlog: FoodLog;
   logId: String;
   fooditems: Fooditem[];
@@ -27,7 +30,15 @@ export class FooditemListComponent implements OnInit {
   constructor(private fooditemService: FooditemService,
               private activatedRoute: ActivatedRoute,
               private foodlogService: FoodlogService,
-              private router: Router) { }
+              private router: Router,
+              private userService: UserService) { }
+
+  logOut() {
+    this.userService.logout()
+      .subscribe((status) => {
+        this.router.navigate(['/login']);
+      });
+  }
 
   deleteItem(itemId) {
     this.fooditemService.deleteItem(this.userId, this.logId, itemId)
@@ -84,6 +95,12 @@ export class FooditemListComponent implements OnInit {
           .findFoodLogById(this.userId, this.logId)
           .subscribe((foodlog) => {
             this.foodlog = foodlog;
+          });
+
+        this.userService
+          .findUserById(this.userId)
+          .subscribe((user) => {
+            this.user = user;
           });
       });
   }

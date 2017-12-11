@@ -4,6 +4,8 @@ import { FoodlogService } from "../../../services/foodlog.service.client";
 import { FoodLog } from "../../../models/foodlog.model.client";
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
+import { User } from "../../../models/user.model.client";
+import { UserService } from "../../../services/user.service.client";
 
 @Component({
   selector: 'app-foodlog-new',
@@ -13,6 +15,7 @@ import { Router } from "@angular/router";
 export class FoodlogNewComponent implements OnInit {
 
   userId: String;
+  user: User;
   foodlogs: FoodLog[];
   name: String;
   date: Date;
@@ -20,7 +23,15 @@ export class FoodlogNewComponent implements OnInit {
 
   constructor(private foodlogService: FoodlogService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private userService: UserService) { }
+
+  logOut() {
+    this.userService.logout()
+      .subscribe((status) => {
+        this.router.navigate(['/login']);
+      });
+  }
 
   foodlognew() {
     if (this.name) {
@@ -44,6 +55,12 @@ export class FoodlogNewComponent implements OnInit {
           .findFoodlogsByUser(this.userId)
           .subscribe((foodlogs) => {
             this.foodlogs = foodlogs;
+          });
+
+        this.userService
+          .findUserById(this.userId)
+          .subscribe((user) => {
+            this.user = user;
           });
       });
   }

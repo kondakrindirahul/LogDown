@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { NutrionixAPIService } from "../../../services/nutrionixAPI.service.client";
 import { FooditemService } from "../../../services/fooditem.service.client";
 import { Fooditem } from "../../../models/fooditem.model.client";
+import { UserService } from "../../../services/user.service.client";
+import { User } from "../../../models/user.model.client";
 
 @Component({
   selector: 'app-fooditem-new',
@@ -13,6 +15,7 @@ export class FooditemNewComponent implements OnInit {
 
   logId: String;
   userId: String;
+  user: User;
   fooditem: String;
   name: String;
   calories: String;
@@ -37,7 +40,15 @@ export class FooditemNewComponent implements OnInit {
   constructor(private nutrionixService: NutrionixAPIService,
               private activatedRoute: ActivatedRoute,
               private fooditemService: FooditemService,
-              private router: Router) { }
+              private router: Router,
+              private userService: UserService) { }
+
+  logOut() {
+    this.userService.logout()
+      .subscribe((status) => {
+        this.router.navigate(['/login']);
+      });
+  }
 
   searchFood(fooditem: String) {
     if(fooditem) {
@@ -130,6 +141,12 @@ export class FooditemNewComponent implements OnInit {
         this.userId = params['userId'];
         this.logId = params['logId'];
         this.event = params['time'];
+
+        this.userService
+          .findUserById(this.userId)
+          .subscribe((user) => {
+            this.user = user;
+          });
       });
   }
 

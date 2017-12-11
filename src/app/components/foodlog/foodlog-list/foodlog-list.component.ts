@@ -4,6 +4,7 @@ import { FoodLog } from "../../../models/foodlog.model.client";
 import { ActivatedRoute } from "@angular/router";
 import { User } from "../../../models/user.model.client";
 import { UserService } from "../../../services/user.service.client";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-foodlog-list',
@@ -19,7 +20,15 @@ export class FoodlogListComponent implements OnInit {
 
   constructor(private foodlogService: FoodlogService,
               private activatedRoute: ActivatedRoute,
-              private userService: UserService) { }
+              private userService: UserService,
+              private router: Router) { }
+
+  logOut() {
+    this.userService.logout()
+      .subscribe((status) => {
+        this.router.navigate(['/login']);
+      });
+  }
 
   ngOnInit() {
     this.activatedRoute.params
