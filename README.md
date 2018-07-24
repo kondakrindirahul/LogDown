@@ -6,3 +6,5 @@
  * An option is provided for the user to add the food item in either breakfast, lunch, dinner or snacks category in each food log.
  * The searching of food items and the displaying their macros is done by hitting the Nutrionix API.
  * An anonymous user (user without an account) can view the macros and calorie content in a food item but cannot add it to his foodlog unless he creates an account.
+ * Link to access the application:
+ https://logdownproject.herokuapp.com/
